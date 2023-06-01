@@ -27,3 +27,17 @@ const theme = (() => {
   }
 
   document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+
+  const profilePopover = document.getElementById('profile-popover');
+    const profileButton = document.getElementById('profile');
+
+    profileButton.addEventListener('click', () => {
+        profilePopover.classList.toggle('show');
+    });
+
+//handle click outside
+window.addEventListener('click', (e) => {
+    if (!profileButton.contains(e.target)) {
+        profilePopover.classList.remove('show');
+    }
+});

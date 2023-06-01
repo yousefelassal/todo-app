@@ -4,6 +4,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
 
+:root{
+    --primary: #2B3C5B;
+    --hover: #4f5875;
+    --primary-gradient: #F9A884;
+    --secondary-gradient: #F78579;
+}
+
+html.dark{
+    --primary: #DFE0FB;
+    --hover: #cfcfcf;
+    --primary-gradient: #9172F7;
+    --secondary-gradient: #683DF7;
+}
+
 body{
     font-family: 'Lexend Deca', sans-serif;
     min-height: 100vh;
@@ -25,13 +39,13 @@ body, body *{
 }
 
 .grid-item1{
-    border-radius: 0 2rem 2rem 0;
-    @apply  left-0  p-4;
+    /* border-radius: 0 2rem 2rem 0; */
+    @apply  left-0  p-4 flex flex-col gap-4;
 }
 
 .grid-item2{
     border-radius: 2rem 0 0 2rem;
-    @apply right-0;
+    @apply right-0 relative;
 }
 
 /* Scrollbar Override */
@@ -74,4 +88,39 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 
 html.dark ::-webkit-scrollbar-thumb:active{
     background: linear-gradient(130.21deg, #683DF7 0%, #9172F7 100%);
+}
+
+.arrow{
+    border: solid var(--primary);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+}
+
+.up{
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#profile-popover {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#profile-popover.show {
+    display: block;
 }
