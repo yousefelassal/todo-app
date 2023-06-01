@@ -11,3 +11,15 @@ body{
 body, body *{
     @apply transition-colors duration-200;
 }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    gap: 1.5rem;
+    height: 75vh;
+}
+
+.grid-item{
+    @apply h-full bg-[#E6EEF8] dark:bg-[#18181C] rounded-3xl;
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
