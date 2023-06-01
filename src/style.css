@@ -6,6 +6,7 @@
 
 body{
     font-family: 'Lexend Deca', sans-serif;
+    min-height: 100vh;
 }
 
 body, body *{
@@ -14,12 +15,63 @@ body, body *{
 
 .grid-container{
     display: grid;
-    grid-template-columns: 1fr 3.5fr;
+    grid-template-columns: 1fr 3.25fr;
     gap: 1.5rem;
-    height: 75vh;
 }
 
-.grid-item{
-    @apply h-full bg-[#E6EEF8] dark:bg-[#18181C] rounded-3xl;
+.grid-item1, .grid-item2{
+    @apply bg-[#E6EEF8] dark:bg-[#18181C] h-screen sticky overflow-hidden top-0;
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item1{
+    border-radius: 0 2rem 2rem 0;
+    @apply  left-0  p-4;
+}
+
+.grid-item2{
+    border-radius: 2rem 0 0 2rem;
+    @apply right-0;
+}
+
+/* Scrollbar Override */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar:vertical {
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ccc;
+/* border-radius: 12px; */
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background-color: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+background: linear-gradient(108.42deg, #F9A884 16.76%, #F78579 62.49%);
+/* border: 6px solid rgba(0, 0, 0, 0.2);  */
+}
+
+::-webkit-scrollbar-thumb:active{
+    background: linear-gradient(108.42deg, #F78579 16.76%, #F9A884 62.49%);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(130.21deg, #9172F7 0%, #683DF7 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: #F78579;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: #683DF7;
+}
+
+html.dark ::-webkit-scrollbar-thumb:active{
+    background: linear-gradient(130.21deg, #683DF7 0%, #9172F7 100%);
 }
