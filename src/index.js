@@ -1,5 +1,6 @@
 import './style.css';
 
+//handle theme
 const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme');
@@ -28,6 +29,8 @@ const theme = (() => {
 
   document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
 
+
+  //handle popover
   const profilePopover = document.getElementById('profile-popover');
     const profileButton = document.getElementById('profile');
 
@@ -40,4 +43,17 @@ window.addEventListener('click', (e) => {
     if (!profileButton.contains(e.target)) {
         profilePopover.classList.remove('show');
     }
+});
+
+//handle sidebar items
+let items = document.querySelectorAll(".item");
+
+items.forEach(item=>{
+  item.addEventListener("click", (event)=>{
+    items.forEach(item=>{ 
+      item.classList.remove("active");
+    });
+
+    event.currentTarget.classList.add("active");
+  });
 });

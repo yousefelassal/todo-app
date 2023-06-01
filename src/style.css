@@ -6,6 +6,8 @@
 
 :root{
     --primary: #2B3C5B;
+    --secondary: #FF8394;
+    --tertiary: #84849D;
     --hover: #4f5875;
     --primary-gradient: #F9A884;
     --secondary-gradient: #F78579;
@@ -13,6 +15,7 @@
 
 html.dark{
     --primary: #DFE0FB;
+    --secondary: #8D8FD2;
     --hover: #cfcfcf;
     --primary-gradient: #9172F7;
     --secondary-gradient: #683DF7;
@@ -123,4 +126,8 @@ html.dark ::-webkit-scrollbar-thumb:active{
 
 #profile-popover.show {
     display: block;
+}
+
+.item.active{
+    @apply bg-[#D3DEE3] dark:bg-[#2F2D36];
 }
