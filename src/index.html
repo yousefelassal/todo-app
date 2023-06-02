@@ -129,7 +129,7 @@
             <div class="flex flex-col gap-4">
                 <h1 class="text-3xl text-[var(--secondary)] px-2 py-2">Tasks</h1>
                 
-                <div class="flex gap-2 px-2">
+                <div class="flex gap-2 px-2 -mt-2">
                     <div class="relative">
                         <button id="view" class="flex items-center justify-between bg-[var(--content-bg)] px-2 py-1 w-[max(15vw,12rem)] gap-2 border-2 border-[var(--theme-bg-color)] rounded-md shadow-sm hover:scale-[1.01] hover:bg-[var(--theme-bg-color)]">
                             <div class="gap-2 items-center flex">
@@ -161,6 +161,44 @@
                             <a href="/" class="block rounded-md px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-[var(--theme-bg-color)] hover:text-gray-900 dark:hover:text-gray-300">Last modified</a>
                             <a href="/" class="block rounded-md px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-[var(--theme-bg-color)] hover:text-gray-900 dark:hover:text-gray-300">Name</a>
                             <a href="/" class="block rounded-md px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-[var(--theme-bg-color)] hover:text-gray-900 dark:hover:text-gray-300">Due date</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 px-2 mt-2">
+                    <div class="group flex justify-between w-full items-center bg-[var(--task-bg)] hover:bg-[var(--task-hover)] px-4 py-3 rounded-lg shadow-sm transition-all" data-bg-index="0">
+                        <div class="flex gap-4 items-center">
+                            <div class="checkbox-wrapper-12">
+                                <div class="cbx">
+                                  <input class="task-cbx" id="task-cbx" type="checkbox" data-cbx-index="0">
+                                  <label for="task-cbx"></label>
+                                  <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                    <path d="M2 8.36364L6.23077 12L13 2"></path>
+                                  </svg>
+                                </div>
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                  <defs>
+                                    <filter id="goo-12">
+                                      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+                                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12"></feColorMatrix>
+                                      <feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+                                    </filter>
+                                  </defs>
+                                </svg>
+                            </div>
+                            <h1 class="text-[var(--primary)] text-lg" data-title-index="0">ay haga</h1>
+                        </div>
+                        <div class="flex gap-2 justify-end items-center" data-options-index="0">
+                            <button>
+                                <svg class="invisible fill-[var(--tertiary)] group-hover:visible transition-all ease-out hover:fill-[var(--secondary)] hover:scale-110 duration-75" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"></path>
+                                </svg>
+                            </button>
+                            <button>
+                                <svg class="invisible fill-[var(--tertiary)] group-hover:visible transition-all ease-out hover:fill-[var(--secondary)] hover:scale-110 duration-75" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M 10.806641 2 C 10.289641 2 9.7956875 2.2043125 9.4296875 2.5703125 L 9 3 L 4 3 A 1.0001 1.0001 0 1 0 4 5 L 20 5 A 1.0001 1.0001 0 1 0 20 3 L 15 3 L 14.570312 2.5703125 C 14.205312 2.2043125 13.710359 2 13.193359 2 L 10.806641 2 z M 4.3652344 7 L 5.8925781 20.263672 C 6.0245781 21.253672 6.877 22 7.875 22 L 16.123047 22 C 17.121047 22 17.974422 21.254859 18.107422 20.255859 L 19.634766 7 L 4.3652344 7 z"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
