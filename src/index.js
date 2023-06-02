@@ -32,11 +32,25 @@ const theme = (() => {
 
   //handle popover
   const profilePopover = document.getElementById('profile-popover');
-    const profileButton = document.getElementById('profile');
+  const profileButton = document.getElementById('profile');
 
-    profileButton.addEventListener('click', () => {
-        profilePopover.classList.toggle('show');
-    });
+  profileButton.addEventListener('click', () => {
+      profilePopover.classList.toggle('show');
+  });
+
+  const viewPopover = document.getElementById('view-popover');
+  const viewButton = document.getElementById('view');
+
+  viewButton.addEventListener('click', () => {
+      viewPopover.classList.toggle('show');
+  });
+
+  const sortPopover = document.getElementById('sort-popover');
+  const sortButton = document.getElementById('sort');
+
+  sortButton.addEventListener('click', () => {
+      sortPopover.classList.toggle('show');
+  });
 
 //handle click outside
 window.addEventListener('click', (e) => {
@@ -45,7 +59,13 @@ window.addEventListener('click', (e) => {
     }
     if (!addProject.contains(e.target)) {
       addProject.classList.remove('active');
-  }
+    }
+    if (!viewButton.contains(e.target)) {
+        viewPopover.classList.remove('show');
+    }
+    if (!sortButton.contains(e.target)) {
+        sortPopover.classList.remove('show');
+    }
 });
 
 //handle sidebar items
