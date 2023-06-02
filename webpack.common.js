@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   entry: {
     app: './src/index.js',
     landing: './src/landing.js',
@@ -30,16 +29,6 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
-  },
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'dist'),
-    },
-    port: 3000,
-    open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
   },
   module: {
     rules: [
