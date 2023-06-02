@@ -43,6 +43,9 @@ window.addEventListener('click', (e) => {
     if (!profileButton.contains(e.target)) {
         profilePopover.classList.remove('show');
     }
+    if (!addProject.contains(e.target)) {
+      addProject.classList.remove('active');
+  }
 });
 
 //handle sidebar items
@@ -57,3 +60,10 @@ items.forEach(item=>{
     event.currentTarget.classList.add("active");
   });
 });
+
+//handle add project button
+const addProject = document.getElementById('addProject');
+addProject.addEventListener('click', () => {
+  addProject.classList.toggle('active');
+});
+

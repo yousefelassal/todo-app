@@ -131,3 +131,13 @@ html.dark ::-webkit-scrollbar-thumb:active{
 .item.active{
     @apply bg-[#D3DEE3] dark:bg-[#2F2D36];
 }
+
+#addProject{
+    @apply transition-colors duration-75;
+    transition:0.2s ease-out;
+}
+
+#addProject.active{
+    @apply rotate-45;
+    transition: 0.2s ease-out;
+}
