@@ -389,28 +389,40 @@ function renderForm(){
   </div>
   </div>`;
   displayContainer.appendChild(form);
-};
-$("#add-button").on('click', function() {
-  var title = $("#title").val();
-  var description = $("#description").val();
-  var project = $("#project").val();
-  var date = $("#date").val();
-  var image = $("#image").val();
-  var star = $("#star").is(':checked');
+
+  
+  $("#add-button").on('click', function() {
+    var title = $("#title").val();
+    var description = $("#description").val();
+    var project = $("#project").val();
+    var date = $("#date").val();
+    var image = $("#image").val();
+    var star = $("#star").is(':checked');
+    var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
   $.ajax({
     async:'false',
     type: "POST",
     url : '/tasks-api/',
     data : {
-      'title' : title,
+      'title' : 'title',
       'description' : description,
       'project' : project,
       'date' : date,
       'starred' : star,
+      csrfmiddlewaretoken: csrfToken
+  
     },
     success: function(data){
       console.log('done');
+    },
+    error: function(data){
+      console.log('error');
+      console.log(data);
     }
+  
   })
-})
+  })
+  
+  
+};
 
