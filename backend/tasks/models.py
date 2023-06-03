@@ -1,0 +1,14 @@
+from django.db import models
+
+# Create your models here.
+class Tasks(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
+    project = models.CharField(max_length=200)
+    date = models.DateField()
+    # image = models.ImageField(upload_to='images/', blank=True, null=True)
+    completed = models.BooleanField(default=False)
+    starred = models.BooleanField(default=False)
+
+
+
