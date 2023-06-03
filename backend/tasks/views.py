@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Tasks
+from .models import Task
 from rest_framework.views import APIView
 from .serializer import taskSerializer
 from rest_framework.response import Response
@@ -12,7 +12,7 @@ from django.views.generic import TemplateView
 
 class TasksApi(APIView):
     def get(self, request):
-        result = Tasks.objects.all()
+        result = Task.objects.all()
         serializer = taskSerializer(result, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
