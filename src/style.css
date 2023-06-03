@@ -132,7 +132,26 @@ html.dark ::-webkit-scrollbar-thumb:active{
     padding: 2.8px;
 }
 
+.arrow.big.up{
+    animation: flipUp 0.1s ease-in-out forwards;
+}
+
+.arrow.big.down{
+    animation: flipDown 0.1s ease-in-out forwards;
+}
+
 @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -141,9 +160,32 @@ html.dark ::-webkit-scrollbar-thumb:active{
     }
 }
 
-#profile-popover, #view-popover, #sort-popover{
-    display: none;
-    animation: fadeIn 0.3s ease-in-out;
+@keyframes flipUp {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+    }
+    100% {
+        transform: rotate(-135deg) translateY(-2px);
+    }
+}
+
+@keyframes flipDown {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+    }
+    100% {
+        transform: rotate(45deg) translateY(2px);
+    }
+}
+
+#view-popover, #sort-popover{
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+#profile-popover {
+  display: none;
+  animation: fade 0.3s ease-in-out;
 }
 
 #profile-popover.show, #view-popover.show, #sort-popover.show{

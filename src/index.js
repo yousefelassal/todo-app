@@ -43,15 +43,20 @@ const theme = (() => {
   function handleViewPopover(){
   const viewPopover = document.getElementById('view-popover');
   const viewButton = document.getElementById('view');
+  const viewArrow = document.getElementById('view-arrow');
 
   viewButton.addEventListener('click', () => {
       viewPopover.classList.toggle('show');
+      viewArrow.classList.toggle('down');
+      viewArrow.classList.toggle('up');
   });
 
   //handle click outside
 window.addEventListener('click', (e) => {
   if (!viewButton.contains(e.target)) {
       viewPopover.classList.remove('show');
+      viewArrow.classList.add('down');
+      viewArrow.classList.remove('up');
   }
 });
 }
@@ -61,15 +66,20 @@ handleViewPopover();
   function handleSortPopover(){
   const sortPopover = document.getElementById('sort-popover');
   const sortButton = document.getElementById('sort');
+  const sortArrow = document.getElementById('sort-arrow');
 
   sortButton.addEventListener('click', () => {
       sortPopover.classList.toggle('show');
+      sortArrow.classList.toggle('down');
+      sortArrow.classList.toggle('up');
   });
 
   //handle click outside
 window.addEventListener('click', (e) => {
   if (!sortButton.contains(e.target)) {
       sortPopover.classList.remove('show');
+      sortArrow.classList.add('down');
+      sortArrow.classList.remove('up');
   }
 });
 };
@@ -235,7 +245,7 @@ function renderTasks(){
                   </svg>
                   <h1 class="text-[var(--primary)]">List view</h1>
               </div>
-              <div class="arrow down big">
+              <div id="view-arrow" class="arrow down big">
               </div>
           </button>
           <div id="view-popover" class="absolute top-10 left-0 w-[max(15vw,12rem)] rounded-md shadow-md bg-[var(--content-bg)] border-2 border-[var(--theme-bg-color)] p-2 z-50">
@@ -251,7 +261,7 @@ function renderTasks(){
                   </svg>
                   <h1 class="text-[var(--primary)]">Last modified</h1>
               </div>
-              <div class="arrow down big">
+              <div id="sort-arrow" class="arrow down big">
               </div>
           </button>
           <div id="sort-popover" class="absolute top-10 left-0 w-[max(15vw,12rem)] rounded-md shadow-md bg-[var(--content-bg)] border-2 border-[var(--theme-bg-color)] p-2 z-50">
