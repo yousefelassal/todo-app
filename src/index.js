@@ -182,6 +182,8 @@ function handleStar(){
       tasks[index].toggleStar();
       renderTasks();
       handleCbx();
+      handleSortPopover();
+      handleViewPopover();
     });
   });
 }
