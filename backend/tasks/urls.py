@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('tasks-api/', TasksApi.as_view(), name='tasks-api'),
     path('', Homepage.as_view(), name='home'),
+    
 
     
 

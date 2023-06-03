@@ -28,6 +28,7 @@ class TasksApi(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    
 class Homepage(TemplateView):
     template_name = 'index.html'
     
