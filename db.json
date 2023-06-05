@@ -6,7 +6,7 @@
       "project": "sadsadsa",
       "date": "2023-06-28",
       "starred": false,
-      "completed": "false",
+      "completed": false,
       "csrfmiddlewaretoken": "0I3ZduFc2ZUNnnoItTksEcKR8JebZ2vM",
       "id": 1
     },
@@ -16,9 +16,19 @@
       "project": "aslkdalsdjksl",
       "date": "2023-06-21",
       "starred": false,
-      "completed": "false",
+      "completed": false,
       "csrfmiddlewaretoken": "0I3ZduFc2ZUNnnoItTksEcKR8JebZ2vM",
       "id": 2
+    },
+    {
+      "title": "safkksaflkjhdsflk",
+      "description": "sldfhjlaskdjfhlkdahsjf",
+      "project": "asfjs,hdfkjahsdf",
+      "date": "2023-06-15",
+      "starred": false,
+      "completed": true,
+      "csrfmiddlewaretoken": "0I3ZduFc2ZUNnnoItTksEcKR8JebZ2vM",
+      "id": 3
     }
   ]
 }

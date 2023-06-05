@@ -119,20 +119,22 @@ taskCbx.forEach(cbx => {
     const id = bg.getAttribute('data-task-id');
     var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
     $.ajax({
-      async:'false',
+      async: false,
       url: 'http://localhost:3000/tasks/' + id + '/',
       type: 'PATCH',
       headers: {
-        'X-Csrftoken': csrfToken
+        'X-Csrftoken': csrfToken,
+        'Content-Type': 'application/json'
       },
-     
-      data: {
-        completed : !task.isCompleted,
-      },
+      data: JSON.stringify({
+        completed: !task.isCompleted
+      }),
       success: function(data) {
-        console.log(!task.isCompleted)
+        console.log(task.isCompleted);
+        console.log('true');
       }
-    })
+    });
+    
     // End of backend code
 
     if(cbx.checked){
