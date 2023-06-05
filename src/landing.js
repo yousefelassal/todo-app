@@ -1,6 +1,7 @@
 import './style.css'
 import Socrates from './images/socrates.jpg'
 import VladimirLenin from './images/Vladimir_Lenin.jpg'
+import RoomFinder from './images/room-finder.png'
 
 const navbar = document.getElementById('navbar');
 const openNav = document.getElementById('open-nav');
@@ -18,6 +19,8 @@ closeNav.addEventListener('click', () => {
 
 const socrates = document.getElementById('socrates');
 const lenin = document.getElementById('lenin');
+const roomFinder = document.getElementById('room-finder');
 
 socrates.src = Socrates;
 lenin.src = VladimirLenin;
+roomFinder.src = RoomFinder;

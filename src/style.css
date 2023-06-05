@@ -352,3 +352,7 @@ html.dark ::-webkit-scrollbar-thumb:active{
   .testimonials{
     background: linear-gradient(152.92deg, #c084fc33 4.54%, #683DF72b 34.2%, #9172F71a 77.55%);
   }
+
+  .gradient-header{
+    background-image: linear-gradient(to right,#52525b 20%,#a1a1aa 40%,#fff,#a1a1aa 60%,#52525b 85%);
+  }
