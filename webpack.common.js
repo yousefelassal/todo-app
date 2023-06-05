@@ -5,21 +5,21 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
-    landing: './src/landing.js',
+    index: './src/index.js',
+    app: './src/app.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Webpack 5 Boilerplate',
       template: path.resolve(__dirname, 'src', 'index.html'),
       filename: 'index.html',
-      chunks: ['app'],
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       title: 'Webpack 5 Boilerplate',
-      template: path.resolve(__dirname, 'src', 'landing.html'),
-      filename: 'landing.html',
-      chunks: ['landing'],
+      template: path.resolve(__dirname, 'src', 'app.html'),
+      filename: 'app.html',
+      chunks: ['app'],
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -43,6 +43,11 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        include: path.resolve(__dirname, 'src/images'),
+        type: 'asset/resource',
+      }
     ],
   },
 }

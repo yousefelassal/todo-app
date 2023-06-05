@@ -125,6 +125,7 @@ taskCbx.forEach(cbx => {
     const options = document.querySelector(`[data-options-index="${index}"]`);
     const bg = document.querySelector(`[data-bg-index="${index}"]`);
     const task = tasks[index];
+
     // Backend Code to update completed field
     const id = bg.getAttribute('data-task-id');
     var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
@@ -146,6 +147,7 @@ taskCbx.forEach(cbx => {
     });
     
     // End of backend code
+
 
     if(cbx.checked){
       title.style.textDecoration = 'line-through';
@@ -213,6 +215,7 @@ function handleStar(){
 
 let tasks = [];
 
+
 // Backend code to retrieve all tasks and put them in the task array
 $.ajax({
   async:'false',
@@ -273,6 +276,13 @@ addTask.addEventListener('click', () => {
       }
     })
     // End of backend code
+    const task = new Task(title, description, project, date, image , star);
+    tasks.push(task);
+    renderTasks();
+    handleCbx();
+    handleSortPopover();
+    handleViewPopover();
+    handleAddTask();
   });
 });
 }
