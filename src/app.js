@@ -125,6 +125,30 @@ taskCbx.forEach(cbx => {
     const options = document.querySelector(`[data-options-index="${index}"]`);
     const bg = document.querySelector(`[data-bg-index="${index}"]`);
     const task = tasks[index];
+
+    // Backend Code to update completed field
+    const id = bg.getAttribute('data-task-id');
+    var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
+    $.ajax({
+      async: false,
+      url: 'http://localhost:3000/tasks/' + id + '/',
+      type: 'PATCH',
+      headers: {
+        'X-Csrftoken': csrfToken,
+        'Content-Type': 'application/json'
+      },
+      data: JSON.stringify({
+        completed: !task.isCompleted
+      }),
+      success: function(data) {
+        console.log(task.isCompleted);
+        console.log('true');
+      }
+    });
+    
+    // End of backend code
+
+
     if(cbx.checked){
       title.style.textDecoration = 'line-through';
       title.style.opacity = '0.7';
@@ -191,6 +215,23 @@ function handleStar(){
 
 let tasks = [];
 
+
+// Backend code to retrieve all tasks and put them in the task array
+$.ajax({
+  async:'false',
+  url: 'http://localhost:3000/tasks',
+  type: 'GET',
+  success: function(data){
+    data.forEach(task => {
+      tasks.push(new Task(task.title, task.description, task.project, task.date, task.image, task.starred, task.completed ,task.id));
+    });
+    renderTasks();
+    handleCbx();
+    handleAddTask();
+  }
+})
+// end of backend code
+
 function handleAddTask(){
   const addTask = document.getElementById('add-task');
 addTask.addEventListener('click', () => {
@@ -204,6 +245,37 @@ addTask.addEventListener('click', () => {
     const date = document.getElementById('date').value;
     const image = document.getElementById('image').value;
     const star = document.getElementById('star').checked;
+    // Backend code to add a task to the database
+    var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
+    $.ajax({
+      async:'false',
+      type: "POST",
+      url : 'http://localhost:3000/tasks',
+      data : {
+        'title' : title,
+        'description' : description,
+        'project' : project,
+        'date' : date,
+        'starred' : star,
+        'completed' : false,
+        csrfmiddlewaretoken: csrfToken
+      },
+      success: function(data){
+        console.log(data);
+        const task = new Task(title, description, project, date, image , star, false, data.id);
+        tasks.push(task);
+        renderTasks();
+        handleCbx();
+        handleSortPopover();
+        handleViewPopover();
+        handleAddTask();
+      },
+      error: function(data){
+        console.log('error');
+        console.log(data);
+      }
+    })
+    // End of backend code
     const task = new Task(title, description, project, date, image , star);
     tasks.push(task);
     renderTasks();
