@@ -36,6 +36,10 @@ html.dark{
     --theme-bg-color:#373941;
     --content-bg: #30313a;
 
+
+    /* --color-test: #ff80b5;
+    --color-test: #9089fc; */
+
 }
 
 body{
@@ -70,10 +74,10 @@ body, body *{
 
 /* Scrollbar Override */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
 }
 ::-webkit-scrollbar:vertical {
-    height: 10px;
+    height: 5px;
 }
 ::-webkit-scrollbar-track {
     background-color: #ccc;
