@@ -18,7 +18,7 @@ class TasksApi(APIView):
         serializer = taskSerializer(result, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-    @csrf_exempt
+
     def post(self, request):
         csrf_token = get_token(request)
         serializer = taskSerializer(data=request.data)
@@ -27,7 +27,27 @@ class TasksApi(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
+class TaskDetailsApi(APIView):
+   
+   def patch(self, request, id):
+        csrf_token = get_token(request)
+        try:
+            obj = Task.objects.get(id=id)
+        except Task.DoesNotExist:
+            msg = {'msg':'Task Not Found'}
+            return Response(msg, status= status.HTTP_404_NOT_FOUND)
+        
+        serializer = taskSerializer(obj, data=request.data, partial=True)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
+        print(serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+            
+
     
 class Homepage(TemplateView):
     template_name = 'index.html'

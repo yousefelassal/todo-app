@@ -1,12 +1,13 @@
 export default class Task {
-    constructor(name, notes, project, date, image, star) {
+    constructor(name, notes, project, date, image, star, isCompleted, id) {
         this.name = name;
         this.notes = notes;
         this.project = project;
-        this.isCompleted = false;
+        this.isCompleted = isCompleted;
         this.date = date;
         this.image = image;
         this.star = star;
+        this.id = id;
     }
     
     getIsCompleted() {
@@ -19,5 +20,9 @@ export default class Task {
 
     toggleComplete() {
         this.isCompleted = !this.isCompleted;
+    }
+
+    getID() {
+        return this.id;
     }
 }

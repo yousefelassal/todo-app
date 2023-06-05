@@ -115,6 +115,26 @@ taskCbx.forEach(cbx => {
     const options = document.querySelector(`[data-options-index="${index}"]`);
     const bg = document.querySelector(`[data-bg-index="${index}"]`);
     const task = tasks[index];
+    // Backend Code to update completed field
+    const id = bg.getAttribute('data-task-id');
+    var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
+    $.ajax({
+      async:'false',
+      url: 'http://localhost:3000/tasks/' + id + '/',
+      type: 'PATCH',
+      headers: {
+        'X-Csrftoken': csrfToken
+      },
+     
+      data: {
+        completed : !task.isCompleted,
+      },
+      success: function(data) {
+        console.log(!task.isCompleted)
+      }
+    })
+    // End of backend code
+
     if(cbx.checked){
       title.style.textDecoration = 'line-through';
       title.style.opacity = '0.7';
@@ -179,6 +199,22 @@ function handleStar(){
 
 let tasks = [];
 
+// Backend code to retrieve all tasks and put them in the task array
+$.ajax({
+  async:'false',
+  url: 'http://localhost:3000/tasks',
+  type: 'GET',
+  success: function(data){
+    data.forEach(task => {
+      tasks.push(new Task(task.title, task.description, task.project, task.date, task.image, task.starred, task.completed ,task.id));
+    });
+    renderTasks();
+    handleCbx();
+    handleAddTask();
+  }
+})
+// end of backend code
+
 function handleAddTask(){
   const addTask = document.getElementById('add-task');
 addTask.addEventListener('click', () => {
@@ -192,13 +228,37 @@ addTask.addEventListener('click', () => {
     const date = document.getElementById('date').value;
     const image = document.getElementById('image').value;
     const star = document.getElementById('star').checked;
-    const task = new Task(title, description, project, date, image , star);
-    tasks.push(task);
-    renderTasks();
-    handleCbx();
-    handleSortPopover();
-    handleViewPopover();
-    handleAddTask();
+    // Backend code to add a task to the database
+    var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
+    $.ajax({
+      async:'false',
+      type: "POST",
+      url : 'http://localhost:3000/tasks',
+      data : {
+        'title' : title,
+        'description' : description,
+        'project' : project,
+        'date' : date,
+        'starred' : star,
+        'completed' : false,
+        csrfmiddlewaretoken: csrfToken
+      },
+      success: function(data){
+        console.log(data);
+        const task = new Task(title, description, project, date, image , star, false, data.id);
+        tasks.push(task);
+        renderTasks();
+        handleCbx();
+        handleSortPopover();
+        handleViewPopover();
+        handleAddTask();
+      },
+      error: function(data){
+        console.log('error');
+        console.log(data);
+      }
+    })
+    // End of backend code
   });
 });
 }
@@ -270,7 +330,7 @@ taskContainer.classList.add('mt-32', 'flex', 'flex-col', 'gap-4');
   tasks.forEach((task, index) => {
     taskContainer.innerHTML += `
 <div class="flex flex-col gap-2 px-8">
-    <div class="group flex justify-between w-full items-center px-4 py-3 rounded-xl  transition-all ${task.getIsCompleted() ? `bg-transparent` : `bg-[var(--task-bg)] hover:bg-[var(--task-hover)] shadow-sm`}" data-bg-index="${index}">
+    <div class="group flex justify-between w-full items-center px-4 py-3 rounded-xl  transition-all ${task.getIsCompleted() ? `bg-transparent` : `bg-[var(--task-bg)] hover:bg-[var(--task-hover)] shadow-sm`}" data-bg-index="${index}" data-task-id=${task.getID()}>
         <div class="flex gap-4 items-center">
             <div class="checkbox-wrapper-12">
                 <div class="cbx">
@@ -391,38 +451,8 @@ function renderForm(){
   displayContainer.appendChild(form);
 
   
-  $("#add-button").on('click', function() {
-    var title = $("#title").val();
-    var description = $("#description").val();
-    var project = $("#project").val();
-    var date = $("#date").val();
-    var image = $("#image").val();
-    var star = $("#star").is(':checked');
-    var csrfToken = document.cookie.match(/csrftoken=(.+)/)[1];
-  $.ajax({
-    async:'false',
-    type: "POST",
-    url : '/tasks-api/',
-    data : {
-      'title' : 'title',
-      'description' : description,
-      'project' : project,
-      'date' : date,
-      'starred' : star,
-      csrfmiddlewaretoken: csrfToken
+
+}
   
-    },
-    success: function(data){
-      console.log('done');
-    },
-    error: function(data){
-      console.log('error');
-      console.log(data);
-    }
-  
-  })
-  })
-  
-  
-};
+
 
