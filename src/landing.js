@@ -27,3 +27,17 @@ socrates.src = Socrates;
 lenin.src = VladimirLenin;
 roomFinder.src = RoomFinder;
 productImg.src = ProductImg;
+
+
+const featuresLink = document.getElementById('features-link');
+const productLink = document.getElementById('product-link');
+
+const featuresSection = document.getElementById('features-section');
+
+featuresLink.addEventListener('click', () => {
+    featuresSection.scrollIntoView({ behavior: 'smooth'});
+});
+
+productLink.addEventListener('click', () => {
+    featuresSection.scrollIntoView({ behavior: 'smooth'});
+});
