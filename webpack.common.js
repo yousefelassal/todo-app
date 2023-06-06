@@ -21,6 +21,16 @@ module.exports = {
       filename: 'app.html',
       chunks: ['app'],
     }),
+    new HtmlWebpackPlugin({
+      title: 'Webpack 5 Boilerplate',
+      template: path.resolve(__dirname, 'src/pages', 'signup.html'),
+      filename: 'signup.html',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Webpack 5 Boilerplate',
+      template: path.resolve(__dirname, 'src/pages', 'login.html'),
+      filename: 'login.html',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
