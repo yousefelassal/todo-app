@@ -17,7 +17,6 @@ confirmPassword.addEventListener('input', () => {
 });
 
 let revealPassword = document.querySelectorAll('.revealPassword');
-let passwordIcon = document.querySelectorAll('.passwordIcon');
 
 revealPassword.forEach((element) => {
     element.addEventListener('click', () => {
@@ -37,3 +36,16 @@ revealPassword.forEach((element) => {
     });
 });
 
+let emailIcon = document.querySelector('.email-icon');
+let email = document.getElementById('email');
+
+//change email icon color if valid or invalid
+email.addEventListener('input', () => {
+    if(email.validity.valid) {
+        emailIcon.classList.add('valid');
+        emailIcon.classList.remove('invalid');
+    } else {
+        emailIcon.classList.add('invalid');
+        emailIcon.classList.remove('valid');
+    }
+});

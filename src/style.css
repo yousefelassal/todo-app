@@ -434,3 +434,13 @@ html.dark ::-webkit-scrollbar-thumb:active{
   @apply: stroke-indigo-600;
   stroke: #683DF7;
 }
+
+.email-icon.valid{
+  @apply: stroke-green-600;
+  stroke: #10B981;
+}
+
+.email-icon.invalid{
+  @apply: stroke-red-600;
+  stroke: #EF4444;
+}
