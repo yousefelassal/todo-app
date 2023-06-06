@@ -354,7 +354,7 @@ taskContainer.classList.add('mt-32', 'flex', 'flex-col', 'gap-4');
   tasks.forEach((task, index) => {
     taskContainer.innerHTML += `
 <div class="flex flex-col gap-2 px-8">
-    <div class="group flex justify-between w-full items-center px-4 py-3 rounded-xl  transition-all ${task.getIsCompleted() ? `bg-transparent` : `bg-[var(--task-bg)] hover:bg-[var(--task-hover)] shadow-sm`}" data-bg-index="${index}">
+    <div class="group flex justify-between w-full items-center px-4 py-3 rounded-xl  transition-all ${task.getIsCompleted() ? `bg-transparent` : `bg-[var(--task-bg)] hover:bg-[var(--task-hover)] shadow-sm`}" data-bg-index="${index}" data-task-id=${task.getID()}>
         <div class="flex gap-4 items-center">
             <div class="checkbox-wrapper-12">
                 <div class="cbx">
