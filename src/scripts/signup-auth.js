@@ -16,3 +16,24 @@ confirmPassword.addEventListener('input', () => {
     }
 });
 
+let revealPassword = document.querySelectorAll('.revealPassword');
+let passwordIcon = document.querySelectorAll('.passwordIcon');
+
+revealPassword.forEach((element) => {
+    element.addEventListener('click', () => {
+        if(password.type === 'password') {
+            password.type = 'text';
+            confirmPassword.type = 'text';
+            revealPassword.forEach((element) => {
+                element.classList.add('active');
+            });
+        } else {
+            password.type = 'password';
+            confirmPassword.type = 'password';
+            revealPassword.forEach((element) => {
+                element.classList.remove('active');
+            });
+        }
+    });
+});
+
