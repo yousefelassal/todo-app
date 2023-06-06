@@ -54,7 +54,7 @@
                   First Name
                 </label>
     
-                <input
+                <input required
                   type="text"
                   id="firstName"
                   name="firstName"
@@ -70,7 +70,7 @@
                   Last Name
                 </label>
     
-                <input
+                <input required
                   type="text"
                   id="lastName"
                   name="lastName"
@@ -80,15 +80,15 @@
   
             <div class="col-span-6">
               <label
-                for="Email"
+                for="email"
                 class="block text-sm font-medium text-gray-700 dark:text-gray-200"
               >
                 Email
               </label>
               <div class="relative">
-                <input
+                <input required
                     type="email"
-                    id="Email"
+                    id="email"
                     name="email"
                     class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900 border"
                 />
@@ -113,15 +113,15 @@
   
             <div class="col-span-6 sm:col-span-3">
               <label
-                for="Password"
+                for="password"
                 class="block text-sm font-medium text-gray-700 dark:text-gray-200"
               >
                 Password
               </label>
               <div class="relative">
-                <input
+                <input required
                     type="password"
-                    id="Password"
+                    id="password"
                     name="password"
                     class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900 border"
                 />
@@ -152,15 +152,15 @@
   
             <div class="col-span-6 sm:col-span-3">
               <label
-                for="PasswordConfirmation"
+                for="confirmPassword"
                 class="block text-sm font-medium text-gray-700 dark:text-gray-200"
               >
                 Confirm Password
               </label>
               <div class="relative">
-                <input
+                <input required
                     type="password"
-                    id="PasswordConfirmation"
+                    id="confirmPassword"
                     name="password_confirmation"
                     class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900 border"
                 />
@@ -210,6 +210,6 @@
       </main>
     </div>
   </section>
-  <script src="/src/scripts/auth.js"></script>
+  <script src="/src/scripts/signup-auth.js"></script>
 </body>
 </html>
