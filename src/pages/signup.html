@@ -17,7 +17,8 @@
       >
         <img
           alt="Pattern"
-          src="/src/images/signupimg.svg"
+          id="pattern"
+          src=""
           class="absolute inset-0 h-full w-full object-cover"
         />
       </aside>
@@ -27,9 +28,9 @@
         class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
       >
         <div class="max-w-xl lg:max-w-3xl">
-          <a class="block text-blue-600" href="../index.html">
+          <a class="block" href="./index.html">
             <span class="sr-only">Home</span>
-            <div class="cursor-pointer"><span class="text-6xl text-[var(--primary)]">to</span><span class="text-6xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
+            <div class="cursor-pointer"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
           </a>
   
           <h1
@@ -37,10 +38,11 @@
           >
             Sign Up
           </h1>
-  
           <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
-            dolorum aliquam, quibusdam aperiam voluptatum.
+            Already have an account?
+                <a href="./login.html" class="text-gray-700 hover:text-gray-600 underline dark:text-gray-200"
+                  >Log in</a
+                >.
           </p>
   
           <form action="#" class="mt-8 grid grid-cols-6 gap-6">
@@ -56,7 +58,7 @@
                   type="text"
                   id="firstName"
                   name="firstName"
-                  class="mt-1 w-full p-4 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                  class="mt-1 w-full p-2 rounded-md ring-0 text-sm shadow-sm border dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900"
                 />
             </div>
   
@@ -72,7 +74,7 @@
                   type="text"
                   id="lastName"
                   name="lastName"
-                  class="mt-1 w-full rounded-md p-2 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                  class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 border bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900"
                 />
             </div>
   
@@ -83,13 +85,30 @@
               >
                 Email
               </label>
-  
-              <input
-                type="email"
-                id="Email"
-                name="email"
-                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-              />
+              <div class="relative">
+                <input
+                    type="email"
+                    id="Email"
+                    name="email"
+                    class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900 border"
+                />
+                <span class="absolute inset-y-0 end-0 grid place-content-center px-2">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                    />
+                    </svg>
+                </span>
+              </div>
             </div>
   
             <div class="col-span-6 sm:col-span-3">
@@ -99,13 +118,36 @@
               >
                 Password
               </label>
-  
-              <input
-                type="password"
-                id="Password"
-                name="password"
-                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-              />
+              <div class="relative">
+                <input
+                    type="password"
+                    id="Password"
+                    name="password"
+                    class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900 border"
+                />
+                <span class="absolute inset-y-0 end-0 grid place-content-center px-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  </span>
+                </div>
             </div>
   
             <div class="col-span-6 sm:col-span-3">
@@ -113,35 +155,61 @@
                 for="PasswordConfirmation"
                 class="block text-sm font-medium text-gray-700 dark:text-gray-200"
               >
-                Password Confirmation
+                Confirm Password
               </label>
-  
-              <input
-                type="password"
-                id="PasswordConfirmation"
-                name="password_confirmation"
-                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-              />
+              <div class="relative">
+                <input
+                    type="password"
+                    id="PasswordConfirmation"
+                    name="password_confirmation"
+                    class="mt-1 w-full rounded-md p-2 ring-0 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 focus:outline focus:outline-indigo-900 border"
+                />
+                <span class="absolute inset-y-0 end-0 grid place-content-center px-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  </span>
+            </div>
             </div>
   
-            <div class="col-span-6 sm:col-span-3 place-content-center grid items-center justify-center gap-2 sm:gap-4">
+            <div class="col-span-6 w-full flex-1 flex place-items-center place-content-center">
               <button
-                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white"
+                class="shrink-0 flex items-center justify-center w-full rounded-md h-10 bg-gradient-to-br from-[var(--primary-gradient)] to-[var(--secondary-gradient)] group-hover:bg-gradient-to-r text-[var(--primary)] shadow-md hover:bg-gradient-to-tr px-12 py-3 text-sm font-medium text-white transition"
               >
                 Create an account
               </button>
-  
-              <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-                Already have an account?
-                <a href="#" class="text-gray-700 underline dark:text-gray-200"
-                  >Log in</a
-                >.
-              </p>
             </div>
+            <!-- google authentication ?? -->
+            <!-- <div class="col-span-6 flex flex-1 w-full place-items-center place-content-center">
+                <button class="flex items-center justify-center gap-2 border h-10 w-full border-gray-500 rounded-md bg-gray-600 hover:bg-gray-700 px-4 py-2 text-sm font-medium text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
+                        <path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                    </svg>
+                    Continue with Google
+            </button>
+          </div> -->
           </form>
         </div>
       </main>
     </div>
   </section>
+  <script src="/src/scripts/auth.js"></script>
 </body>
 </html>
