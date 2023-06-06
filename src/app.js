@@ -251,7 +251,10 @@ addTask.addEventListener('click', () => {
       async:'false',
       type: "POST",
       url : 'http://localhost:3000/tasks',
-      data : {
+      headers : {
+        'Content-Type': 'application/json'
+      },
+      data : JSON.stringify({
         'title' : title,
         'description' : description,
         'project' : project,
@@ -259,7 +262,9 @@ addTask.addEventListener('click', () => {
         'starred' : star,
         'completed' : false,
         csrfmiddlewaretoken: csrfToken
-      },
+      })
+
+      ,
       success: function(data){
         console.log(data);
         const task = new Task(title, description, project, date, image , star, false, data.id);

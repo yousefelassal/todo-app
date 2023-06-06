@@ -32,6 +32,7 @@ class TaskDetailsApi(APIView):
    
    def patch(self, request, id):
         csrf_token = get_token(request)
+
         try:
             obj = Task.objects.get(id=id)
         except Task.DoesNotExist:
@@ -43,6 +44,7 @@ class TaskDetailsApi(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
+        
         print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
