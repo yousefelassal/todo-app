@@ -9,13 +9,14 @@ module.exports = {
     app: './src/app.js',
     signupAuth: './src/scripts/signup-auth.js',
     loginAuth: './src/scripts/login-auth.js',
+    router: './src/scripts/router.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Webpack 5 Boilerplate',
       template: path.resolve(__dirname, 'src', 'index.html'),
       filename: 'index.html',
-      chunks: ['index'],
+      chunks: ['router'],
     }),
     new HtmlWebpackPlugin({
       title: 'Webpack 5 Boilerplate',
@@ -34,6 +35,12 @@ module.exports = {
       template: path.resolve(__dirname, 'src/pages', 'login.html'),
       filename: 'login.html',
       chunks: ['loginAuth'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Webpack 5 Boilerplate',
+      template: path.resolve(__dirname, 'src/pages', 'landing.html'),
+      filename: 'landing.html',
+      chunks: ['index'],
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
