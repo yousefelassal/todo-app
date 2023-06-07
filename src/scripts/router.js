@@ -1,24 +1,50 @@
-const route = (event) => {
-    event = event || window.event;
-    event.preventDefault();
-    window.history.pushState({}, "", event.target.href);
-    handleLocation();
+import Landing from "../pages/LandingPage.js";
+import Signup from "../pages/SignupPage.js";
+import Login from "../pages/LoginPage.js";
+
+const navigateTo = (url) => {
+    history.pushState(null, null, url);
+    router();
 };
 
-const routes = {
-    "/": "./landing.html",
-    "/login": "./login.html",
-    "/signup": "./signup.html",
+const router = async () => {
+    const routes = [
+        {path: "/", view: Landing},
+        {path: "/signup", view: Signup},
+        {path: "/login", view: Login},
+    ];
+
+    const potentialMatches = routes.map((route) => {
+        return {
+            route: route,
+            isMatch: location.pathname === route.path,
+        }
+    });
+
+    let match = potentialMatches.find((potentialMatch) => potentialMatch.isMatch);
+
+    if (!match) {
+        match = {
+            route: routes[0],
+            isMatch: true,
+        };
+    };
+
+    const view = new match.route.view();
+
+    document.querySelector("#main").innerHTML = await view.getHtml();
+
 };
 
-const handleLocation = async () => {
-    const path = window.location.pathname;
-    const route = routes[path];
-    const html = await fetch(route).then((data) => data.text());
-    document.getElementById("main").innerHTML = html;
-};
+window.addEventListener("popstate", router);
 
-window.onpopstate = handleLocation;
-window.route = route;
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", (event) => {
+        if (event.target.matches("[data-link]")) {
+            event.preventDefault();
+            navigateTo(event.target.href);
+        }
+    });
 
-handleLocation();
+    router();
+});

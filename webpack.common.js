@@ -24,24 +24,6 @@ module.exports = {
       filename: 'app.html',
       chunks: ['app'],
     }),
-    new HtmlWebpackPlugin({
-      title: 'Webpack 5 Boilerplate',
-      template: path.resolve(__dirname, 'src/pages', 'signup.html'),
-      filename: 'signup.html',
-      chunks: ['signupAuth'],
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Webpack 5 Boilerplate',
-      template: path.resolve(__dirname, 'src/pages', 'login.html'),
-      filename: 'login.html',
-      chunks: ['loginAuth'],
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Webpack 5 Boilerplate',
-      template: path.resolve(__dirname, 'src/pages', 'landing.html'),
-      filename: 'landing.html',
-      chunks: ['index'],
-    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
