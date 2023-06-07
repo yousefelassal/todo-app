@@ -1,0 +1,1 @@
+(()=>{const t={"/":"/src/pages/landing.html","/login":"/src/pages/login.html","/signup":"/src/pages/signup.html"},n=async()=>{const n=window.location.pathname,e=t[n],o=await fetch(e).then((t=>t.text()));document.getElementById("main").innerHTML=o};window.onpopstate=n,window.route=t=>{(t=t||window.event).preventDefault(),window.history.pushState({},"",t.target.href),n()},n()})();
