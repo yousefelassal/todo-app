@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import TasksApi, Homepage, TaskDetailsApi
+from .views import signupPage
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('tasks-api/', TasksApi.as_view(), name='tasks-api'),
-    path('tasks-api-details/<int:id>/', TaskDetailsApi.as_view(), name='tasks-api-details'),
-    path('', Homepage.as_view(), name='home')
+    path("signup/",signupPage, name='signup'),
+    
+
+    
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

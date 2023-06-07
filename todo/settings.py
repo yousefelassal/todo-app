@@ -120,6 +120,9 @@ STATIC_URL = "s/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dist',),
+    os.path.join(BASE_DIR),
+    os.path.join(BASE_DIR, 'src',),
+
 ]
 
 
