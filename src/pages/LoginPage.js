@@ -14,7 +14,7 @@ export default class extends AbstractPage {
         </div>
         <div class="max-w-sm w-full text-gray-600">
             <div class="text-center">
-                <a class="block" href="/" data-link>
+                <a class="block" href="/" data-link="">
                     <span class="sr-only">Home</span>
                     <div class="cursor-pointer"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
                   </a>
@@ -104,6 +104,7 @@ export default class extends AbstractPage {
             </form>
         </div>
     </main>
+    <script src="/src/scripts/login-auth.js"></script>
             `;
     }
 }

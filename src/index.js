@@ -1,45 +1,50 @@
-import './style.css'
-import Socrates from './images/socrates.jpg'
-import VladimirLenin from './images/Vladimir_Lenin.jpg'
-import RoomFinder from './images/room-finder.png'
-import ProductImg from './images/product-page.png'
-import Seif from './images/seif.jpeg'
+import Landing from "./pages/LandingPage.js";
+import Signup from "./pages/SignupPage.js";
+import Login from "./pages/LoginPage.js";
 
-const navbar = document.getElementById('navbar');
-const openNav = document.getElementById('open-nav');
-const closeNav = document.getElementById('close-nav');
+const navigateTo = (url) => {
+    history.pushState(null, null, url);
+    router();
+};
 
-openNav.addEventListener('click', () => {
-    navbar.classList.remove('hidden');
-    navbar.classList.add('flex');
-});
+const router = async () => {
+    const routes = [
+        {path: "/", view: Landing},
+        {path: "/signup", view: Signup},
+        {path: "/login", view: Login},
+    ];
 
-closeNav.addEventListener('click', () => {
-    navbar.classList.remove('flex');
-    navbar.classList.add('hidden');
-});  
+    const potentialMatches = routes.map((route) => {
+        return {
+            route: route,
+            isMatch: location.pathname === route.path,
+        }
+    });
 
-const socrates = document.getElementById('socrates');
-const lenin = document.getElementById('lenin');
-const roomFinder = document.getElementById('room-finder');
-const productImg = document.getElementById('product-img');
-const seif = document.getElementById('seif');
+    let match = potentialMatches.find((potentialMatch) => potentialMatch.isMatch);
 
-socrates.src = Socrates;
-lenin.src = VladimirLenin;
-roomFinder.src = RoomFinder;
-productImg.src = ProductImg;
-seif.src = Seif;
+    if (!match) {
+        match = {
+            route: routes[0],
+            isMatch: true,
+        };
+    };
 
-const featuresLink = document.getElementById('features-link');
-const productLink = document.getElementById('product-link');
+    const view = new match.route.view();
 
-const featuresSection = document.getElementById('features-section');
+    document.querySelector("#main").innerHTML = await view.getHtml();
 
-featuresLink.addEventListener('click', () => {
-    featuresSection.scrollIntoView({ behavior: 'smooth'});
-});
+};
 
-productLink.addEventListener('click', () => {
-    featuresSection.scrollIntoView({ behavior: 'smooth'});
+window.addEventListener("popstate", router);
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", (event) => {
+        if (event.target.matches("[data-link]")) {
+            event.preventDefault();
+            navigateTo(event.target.href);
+        }
+    });
+
+    router();
 });

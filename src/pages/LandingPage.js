@@ -12,7 +12,7 @@ export default class extends AbstractPage {
         <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
-              <a href="/" class="-m-1.5 p-1.5">
+              <a href="/" data-link="" class="-m-1.5 p-1.5">
                 <span class="sr-only">todo.</span>
                 <div class="px-2 cursor-default"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
             </a>
@@ -342,6 +342,7 @@ export default class extends AbstractPage {
             <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 overflow-x-hidden" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
     </div>
+    <script src="/src/scripts/landing.js"></script>
             `;
     }
 }
