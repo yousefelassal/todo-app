@@ -29,11 +29,10 @@ export default class extends AbstractPage {
             class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
           >
             <div class="max-w-xl lg:max-w-3xl">
-              <a class="block" href="/" data-link="">
-                <span class="sr-only">Home</span>
-                <div class="cursor-pointer"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
-              </a>
-      
+            <div class="flex text-center items-center">
+              <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+              <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+            </div>
               <h1
                 class="mt-6 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-4xl"
               >

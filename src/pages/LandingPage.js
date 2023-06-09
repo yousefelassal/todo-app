@@ -12,10 +12,10 @@ export default class extends AbstractPage {
         <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
-              <a href="/" data-link="" class="-m-1.5 p-1.5">
-                <span class="sr-only">todo.</span>
-                <div class="px-2 cursor-default"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
-            </a>
+            <div class="flex items-center">
+              <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+              <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+            </div>
             </div>
             <div class="flex lg:hidden">
               <button id="open-nav" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
@@ -31,7 +31,10 @@ export default class extends AbstractPage {
               <a href="#" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Company</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
-                <a href="/login" data-link class="text-sm font-semibold leading-6 text-gray-100 transition-all group"><span class="transition-all group-hover:mr-1">Log in</span> <span class="pr-1 group-hover:pr-0 transition-all" aria-hidden="true">&rarr;</span></a>
+              <div class="flex text-sm font-semibold leading-6 text-gray-100 transition-all group">
+                  <a href="/login" data-link class="transition-all group-hover:mr-1">Log in &nbsp;</a>
+                  <a href="/login" data-link class="pr-1 group-hover:pr-0 transition-all" aria-hidden="true"> &rarr;</a>
+              </div>
                 <a id="signUpBtn" href="/signup" data-link class="ml-6 button button-primary">
                     Sign up
                     <div class="button-border"></div>

@@ -14,14 +14,14 @@ export default class extends AbstractPage {
         </div>
         <div class="max-w-sm w-full text-gray-600">
             <div class="text-center">
-                <a class="block" href="/" data-link="">
-                    <span class="sr-only">Home</span>
-                    <div class="cursor-pointer"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
-                  </a>
-                  <div class="mt-5 space-y-2">
-                    <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl dark:text-white">Log in to your account</h3>
-                    <p class="text-gray-300">Don't have an account? <a href="/signup" data-link class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a></p>
-                </div>
+              <div class="flex text-center items-center justify-center">
+                  <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+                  <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+              </div>
+              <div class="mt-5 space-y-2">
+                  <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl dark:text-white">Log in to your account</h3>
+                  <p class="text-gray-300">Don't have an account? <a href="/signup" data-link class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a></p>
+              </div>
             </div>
             <form
                 class="mt-8 flex flex-col gap-4 space-y-6"
