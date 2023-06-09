@@ -100,7 +100,7 @@ export default class extends AbstractPage {
             <div class="mt-6">
             <ul class="flex gap-y-6 flex-wrap items-center justify-center [&>*]:px-12 lg:divide-x lg:divide-neutral-700">
                 <li class="flex-none">
-                    <img id="room-finder" src="/src/images/room-finder.png" alt="room finder" class="w-28">
+                    <img id="room-finder" src="/images/room-finder.png" alt="room finder" class="w-28">
                 </li>
                 <li class="flex-none">
                     <svg class="w-28" viewBox="0 0 129 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -154,7 +154,7 @@ export default class extends AbstractPage {
             </div>
           </div>
           <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-            <img id="product-img" class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="/src/images/product-page.png" alt="product image">
+            <img id="product-img" class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="/images/product-page.png" alt="product image">
           </div>
           <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
             <div class="lg:pr-4">
@@ -211,7 +211,7 @@ export default class extends AbstractPage {
                                     The app is very convenient, secure, and user friendly, the ui is very smooth and easy to navigate. also liked the push to deploy feature very ideal.</p>
                             </blockquote>
                             <div class="flex items-center gap-x-4 p-4 mt-6 bg-neutral-800 rounded-xl">
-                                <img id="seif" src="/src/images/seif.jpeg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
+                                <img id="seif" src="/images/seif.jpeg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
                                 <div>
                                     <span class="block text-gray-100 font-semibold">Seif Nomair</span>
                                     <span class="block text-[#683DF7]/80 text-sm mt-0.5">Bany adam</span>
@@ -232,7 +232,7 @@ export default class extends AbstractPage {
                               </p>
                           </blockquote>
                           <div class="flex items-center gap-x-4 p-4 mt-6 bg-neutral-800 rounded-xl">
-                              <img id="lenin" src="/src/images/Vladimir_Lenin.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
+                              <img id="lenin" src="/images/Vladimir_Lenin.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
                               <div>
                                   <span class="block text-gray-100 font-semibold">Vladimir Lenin</span>
                                   <span class="block text-[#683DF7]/80 text-sm mt-0.5">Communist leader</span>
@@ -252,7 +252,7 @@ export default class extends AbstractPage {
                                 It helps me navigate the chaos of life with ease. Its thoughtful features have become my trusted guide on the path to productivity.</p>
                         </blockquote>
                         <div class="flex items-center gap-x-4 p-4 mt-6 bg-neutral-800 rounded-xl">
-                            <img id="socrates" src="/src/images/socrates.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
+                            <img id="socrates" src="/images/socrates.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
                             <div>
                                 <span class="block text-gray-100 font-semibold">Socrates</span>
                                 <span class="block text-[#683DF7]/80 text-sm mt-0.5">Greek philosopher</span>
