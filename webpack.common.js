@@ -7,16 +7,13 @@ module.exports = {
   entry: {
     index: './src/index.js',
     app: './src/app.js',
-    signupAuth: './src/scripts/signup-auth.js',
-    loginAuth: './src/scripts/login-auth.js',
-    landing: './src/scripts/landing.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Webpack 5 Boilerplate',
       template: path.resolve(__dirname, 'src', 'index.html'),
       filename: 'index.html',
-      chunks: ['router'],
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       title: 'Webpack 5 Boilerplate',
