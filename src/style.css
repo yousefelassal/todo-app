@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
-
 :root{
     --primary: #2B3C5B;
     --secondary: #FF8394;
