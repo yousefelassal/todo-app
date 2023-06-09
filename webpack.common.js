@@ -9,7 +9,7 @@ module.exports = {
     app: './src/app.js',
     signupAuth: './src/scripts/signup-auth.js',
     loginAuth: './src/scripts/login-auth.js',
-    router: './src/scripts/router.js',
+    landing: './src/scripts/landing.js',
   },
   plugins: [
     new HtmlWebpackPlugin({

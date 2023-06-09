@@ -33,6 +33,7 @@ const router = async () => {
     const view = new match.route.view();
 
     document.querySelector("#main").innerHTML = await view.getHtml();
+    await view.getJs();
 
 };
 
@@ -48,3 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     router();
 });
+
+// function loadJs(src) {
+//     let script = document.createElement('script');
+//     script.src = src;
+//     script.async = false;
+//     document.head.appendChild(script);
+// }

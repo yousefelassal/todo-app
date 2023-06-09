@@ -97,7 +97,7 @@ export default class extends AbstractPage {
             <div class="mt-6">
             <ul class="flex gap-y-6 flex-wrap items-center justify-center [&>*]:px-12 lg:divide-x lg:divide-neutral-700">
                 <li class="flex-none">
-                    <img id="room-finder" src="" alt="room finder" class="w-28">
+                    <img id="room-finder" src="/src/images/room-finder.png" alt="room finder" class="w-28">
                 </li>
                 <li class="flex-none">
                     <svg class="w-28" viewBox="0 0 129 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -342,7 +342,35 @@ export default class extends AbstractPage {
             <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 overflow-x-hidden" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
     </div>
-    <script src="/src/scripts/landing.js"></script>
             `;
+    }
+
+    async getJs(){
+      const navbar = document.getElementById('navbar');
+      const openNav = document.getElementById('open-nav');
+      const closeNav = document.getElementById('close-nav');
+      
+      openNav.addEventListener('click', () => {
+          navbar.classList.remove('hidden');
+          navbar.classList.add('flex');
+      });
+      
+      closeNav.addEventListener('click', () => {
+          navbar.classList.remove('flex');
+          navbar.classList.add('hidden');
+      });  
+      
+      const featuresLink = document.getElementById('features-link');
+      const productLink = document.getElementById('product-link');
+      
+      const featuresSection = document.getElementById('features-section');
+      
+      featuresLink.addEventListener('click', () => {
+          featuresSection.scrollIntoView({ behavior: 'smooth'});
+      });
+      
+      productLink.addEventListener('click', () => {
+          featuresSection.scrollIntoView({ behavior: 'smooth'});
+      });
     }
 }
