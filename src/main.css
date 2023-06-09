@@ -1895,8 +1895,6 @@ video {
           mask-image: radial-gradient(64rem 64rem at top,#121215,transparent);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
-
 :root{
     --primary: #2B3C5B;
     --secondary: #FF8394;
