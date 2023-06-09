@@ -12,6 +12,5 @@ export default class{
     }
 
     async getJs(){
-        return "";
     }
 }
