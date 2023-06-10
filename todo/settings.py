@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MIDDLEWARE = [
@@ -64,7 +65,9 @@ TEMPLATES = [
 
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'dist'),],
+        "DIRS": [
+            os.path.join(BASE_DIR, 'dist'),
+            ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

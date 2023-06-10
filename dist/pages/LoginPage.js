@@ -25,6 +25,7 @@ export default class extends AbstractPage {
             </div>
             <form
                 class="mt-8 flex flex-col gap-4 space-y-6"
+                method="POST"
             >
                 <div>
                     <label
@@ -134,6 +135,34 @@ email.addEventListener('input', () => {
         emailIcon.classList.remove('valid');
     }
 });
+
+
+let form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const csrftoken = getCookie('csrftoken');
+  const formData = new FormData(form);
+  axios.post('/authuser/', formData, {
+    headers: {
+      'X-CSRFToken': csrftoken
+    }
+  })
+  .then(response => {
+    console.log('Form submission successful');
+    window.location.href = '/';
+    // Handle the response data here
+  })
+  .catch(error => {
+    console.error('Form submission failed', error);
+    // Handle the error here
+  });
+});
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
     }
 }
