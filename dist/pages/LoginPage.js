@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-</head>
-<body class="bg-[#121215]">
-    <main class="w-full h-screen flex flex-col items-center justify-center px-4 relative">
+import AbstractPage from "./AbstractPage.js";
+
+export default class extends AbstractPage {
+    constructor(){
+        super();
+        this.setTitle("Login");
+    }
+
+    async getHtml(){
+        return `
+        <main class="w-full h-screen flex flex-col items-center justify-center px-4 relative">
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
             <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#683DF7] to-[#9172F7] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
         <div class="max-w-sm w-full text-gray-600">
             <div class="text-center">
-                <a class="block" href="./index.html">
-                    <span class="sr-only">Home</span>
-                    <div class="cursor-pointer"><span class="text-4xl text-[var(--primary)]">to</span><span class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
-                  </a>
-                  <div class="mt-5 space-y-2">
-                    <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl dark:text-white">Log in to your account</h3>
-                    <p class="text-gray-300">Don't have an account? <a href="./signup.html" class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a></p>
-                </div>
+              <div class="flex text-center items-center justify-center">
+                  <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+                  <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+              </div>
+              <div class="mt-5 space-y-2">
+                  <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl dark:text-white">Log in to your account</h3>
+                  <p class="text-gray-300">Don't have an account? <a href="/signup" data-link class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a></p>
+              </div>
             </div>
             <form
                 class="mt-8 flex flex-col gap-4 space-y-6"
@@ -104,5 +105,35 @@
         </div>
     </main>
     <script src="/src/scripts/login-auth.js"></script>
-</body>
-</html>
+            `;
+    }
+
+    async getJs(){
+      const password = document.getElementById('password');
+let revealPassword = document.querySelector('.revealPassword');
+
+revealPassword.addEventListener('click', () => {
+    if(password.type === 'password') {
+        password.type = 'text';
+        revealPassword.classList.add('active');
+    } else {
+        password.type = 'password';
+        revealPassword.classList.remove('active');
+    }
+});
+
+let email = document.getElementById('email');
+let emailIcon = document.querySelector('.email-icon');
+
+email.addEventListener('input', () => {
+    if(email.validity.valid) {
+        emailIcon.classList.add('valid');
+        emailIcon.classList.remove('invalid');
+    } else {
+        emailIcon.classList.add('invalid');
+        emailIcon.classList.remove('valid');
+    }
+});
+
+    }
+}
