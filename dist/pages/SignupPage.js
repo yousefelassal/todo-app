@@ -45,7 +45,7 @@ export default class extends AbstractPage {
                     >.
               </p>
       
-              <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+              <form method='post' class="mt-8 grid grid-cols-6 gap-6" id="form">
                 <div class="col-span-6 sm:col-span-3">
                     <label
                       for="firstName"
@@ -196,6 +196,7 @@ export default class extends AbstractPage {
                 <div class="col-span-6 w-full flex-1 flex place-items-center place-content-center">
                   <button
                     class="shrink-0 flex items-center justify-center w-full rounded-md h-10 bg-gradient-to-br from-[var(--primary-gradient)] to-[var(--secondary-gradient)] group-hover:bg-gradient-to-r text-[var(--primary)] shadow-md hover:bg-gradient-to-tr px-12 py-3 text-sm font-medium text-white transition"
+                    type="submit"
                   >
                     Create an account
                   </button>
@@ -264,6 +265,12 @@ email.addEventListener('input', () => {
         emailIcon.classList.add('invalid');
         emailIcon.classList.remove('valid');
     }
+});
+
+
+let form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 });
     }
 }

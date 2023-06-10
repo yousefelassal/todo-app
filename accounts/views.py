@@ -26,6 +26,8 @@ def signupPage(request):
         
     return render(request, 'signup.html')
 
+
+
 class Homepage(TemplateView):
     template_name = 'index.html'
         
