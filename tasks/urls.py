@@ -22,5 +22,4 @@ from django.conf import settings
 urlpatterns = [
     path('tasks-api/', TasksApi.as_view(), name='tasks-api'),
     path('tasks-api-details/<int:id>/', TaskDetailsApi.as_view(), name='tasks-api-details'),
-    path('', Homepage.as_view(), name='home')
 ]+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
