@@ -45,9 +45,9 @@ export default class extends AbstractPage {
         <!-- Mobile menu -->
         <div id="navbar" class="hidden lg:hidden" role="dialog" aria-modal="true">
           <div class="fixed inset-0 z-50"></div>
-          <div class="fixed inset-y-0 right-0 z-50 bg-neutral-900 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div id="nav-animation" class="fixed inset-y-0 right-0 z-50 bg-neutral-900 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-end">
-              <button id="close-nav" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <button id="close-nav" type="button" class="-m-2.5 mt-0 rounded-md p-2.5 text-gray-700">
                 <span class="sr-only">Close menu</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -310,17 +310,17 @@ export default class extends AbstractPage {
             </div>
             <ul class="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
             <li class=" hover:text-gray-300">
-                <a href="#">
+                <a href="/about" data-link>
                     About
                 </a>
             </li>
             <li class=" hover:text-gray-300">
-                <a href="#">
+                <a href="/team" data-link>
                     Team
                 </a>
             </li>
             <li class=" hover:text-gray-300">
-            <a href="#">
+            <a href="/support" data-link>
                 Support
             </a>
         </li>

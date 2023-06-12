@@ -442,3 +442,18 @@ html.dark ::-webkit-scrollbar-thumb:active{
   @apply: stroke-red-600;
   stroke: #EF4444;
 }
+
+#nav-animation{
+  animation: slideDown 0.2s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

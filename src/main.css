@@ -1137,16 +1137,12 @@ video {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
-.divide-gray-400\/10 > :not([hidden]) ~ :not([hidden]) {
-  border-color: rgb(156 163 175 / 0.1);
+.divide-gray-200\/10 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(229 231 235 / 0.1);
 }
 
 .divide-gray-500\/10 > :not([hidden]) ~ :not([hidden]) {
   border-color: rgb(107 114 128 / 0.1);
-}
-
-.divide-gray-200\/10 > :not([hidden]) ~ :not([hidden]) {
-  border-color: rgb(229 231 235 / 0.1);
 }
 
 .overflow-hidden {
@@ -2236,6 +2232,22 @@ html.dark ::-webkit-scrollbar-thumb:active{
   stroke: #EF4444;
 }
 
+#nav-animation{
+  animation: slideDown 0.2s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -2301,33 +2313,8 @@ html.dark ::-webkit-scrollbar-thumb:active{
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-neutral-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-red-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-gradient-to-tr:hover {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
-}
-
-.hover\:from-\[var\(--primary-gradient\)\]:hover {
-  --tw-gradient-from: var(--primary-gradient) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.hover\:to-\[var\(--secondary-gradient\)\]:hover {
-  --tw-gradient-to: var(--secondary-gradient) var(--tw-gradient-to-position);
 }
 
 .hover\:bg-clip-text:hover {
@@ -2341,11 +2328,6 @@ html.dark ::-webkit-scrollbar-thumb:active{
 
 .hover\:stroke-indigo-600:hover {
   stroke: #4f46e5;
-}
-
-.hover\:text-gray-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-300:hover {
