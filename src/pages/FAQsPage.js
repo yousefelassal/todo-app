@@ -8,7 +8,11 @@ export default class extends AbstractPage {
 
     async getHtml() {
         return `
-        <section class="leading-relaxed max-w-screen-xl pt-12 mx-auto px-4 md:px-8 isolate">
+        <div class="p-6 z-50 w-screen flex text-center items-start justify-end md:justify-start fixed lg:px-8">
+            <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+            <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+        </div>
+        <section class="leading-relaxed max-w-screen-xl pt-20 mx-auto px-4 md:px-8 isolate">
             <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
                 <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
