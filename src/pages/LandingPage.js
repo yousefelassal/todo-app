@@ -43,14 +43,10 @@ export default class extends AbstractPage {
           </nav>
         </header>
         <!-- Mobile menu -->
-        <div id="navbar" class="hidden lg:hidden bg-white" role="dialog" aria-modal="true">
+        <div id="navbar" class="hidden lg:hidden" role="dialog" aria-modal="true">
           <div class="fixed inset-0 z-50"></div>
-          <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="/" class="-m-1.5 p-1.5">
-                <span class="sr-only">todo.</span>
-                <div class="px-2 cursor-default"><span class="text-5xl text-[var(--primary)]">to</span><span class="text-5xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
-              </a>
+          <div class="fixed inset-y-0 right-0 z-50 bg-neutral-900 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-end">
               <button id="close-nav" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
                 <span class="sr-only">Close menu</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -59,15 +55,20 @@ export default class extends AbstractPage {
               </button>
             </div>
             <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="-my-6 divide-y divide-gray-200/10">
                 <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100">Product</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100">Features</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Marketplace</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Company</a>
+                  <button class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Features</button>
+                  <button class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Testimonials</button>
+                  <button class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Newsletter</button>
                 </div>
                 <div class="py-6">
-                  <a href="/login" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Log in</a>
+                  <a href="/about" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">About</a>
+                  <a href="/team" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Team</a>
+                  <a href="/support" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Support</a>
+                </div>
+                <div class="py-6">
+                  <a href="/login" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">Log in</a>
+                  <a href="/signup" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">Sign up</a>
                 </div>
               </div>
             </div>

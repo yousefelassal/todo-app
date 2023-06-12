@@ -1,4 +1,11 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "tailwindCSS.includeLanguages": {
+        "javascript": "javascript",
+        "html": "HTML"
+      },
+      "editor.quickSuggestions": {
+        "strings": true
+      }
 }
