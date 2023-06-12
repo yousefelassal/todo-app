@@ -9,6 +9,10 @@ export default class extends AbstractPage {
     async getHtml() {
         return `
         <div class="h-screen bg-[#121215] relative isolate">
+        <div class="p-6 w-screen flex text-center items-start justify-end md:justify-start fixed lg:px-8">
+            <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+            <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+        </div>
         <div class="absolute inset-0 -z-10 overflow-hidden">
           <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-neutral-800 [mask-image:radial-gradient(64rem_64rem_at_top,#121215,transparent)]" aria-hidden="true">
             <defs>
@@ -33,8 +37,7 @@ export default class extends AbstractPage {
                         Let us know how we can help
                     </p>
                     <p>
-                        We’re here to help and answer any question you might have, We look forward to hearing from you! Please fill out the form, or us the contact information bellow .
-                    </p>
+                    We are here to assist you with any questions, concerns, or issues you may have. Our dedicated support team is committed to providing timely and effective solutions to ensure your experience is smooth and enjoyable.</p>
                     <div>
                         <ul class="mt-6 flex flex-col gap-x-10 gap-y-6">    
                             <li class="flex items-center gap-x-3">
