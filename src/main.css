@@ -644,6 +644,18 @@ video {
   top: calc(100% - 13rem);
 }
 
+.top-\[-10rem\] {
+  top: -10rem;
+}
+
+.top-\[-15rem\] {
+  top: -15rem;
+}
+
+.top-\[-20rem\] {
+  top: -20rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1430,6 +1442,10 @@ video {
 
 .fill-transparent {
   fill: transparent;
+}
+
+.fill-gray-100 {
+  fill: #f3f4f6;
 }
 
 .stroke-neutral-800 {
@@ -2674,6 +2690,14 @@ html.dark ::-webkit-scrollbar-thumb:active{
 
   .sm\:top-\[calc\(100\%-30rem\)\] {
     top: calc(100% - 30rem);
+  }
+
+  .sm\:left-\[calc\(50\%-40rem\)\] {
+    left: calc(50% - 40rem);
+  }
+
+  .sm\:top-\[-20rem\] {
+    top: -20rem;
   }
 
   .sm\:col-span-3 {
