@@ -85,7 +85,10 @@ export default class extends AbstractPage {
               <p class="mt-6 text-lg leading-8 text-gray-400">Simplify your life, boost productivity, and stay organized with ease.</p>
               <div class="mt-10 flex items-center justify-center gap-x-6">
                 <a href="/signup" data-link class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-white group transition-all"><span class="group-hover:mr-1 transition-all">Learn more</span> <span class="group-hover:pr-0 pr-1 transition-all" aria-hidden="true">→</span></a>
+                <div class="flex text-sm font-semibold leading-6 text-gray-100 transition-all group">
+                  <a href="/team" data-link class="transition-all group-hover:mr-1">Learn more &nbsp;</a>
+                  <a href="/team" data-link class="pr-1 group-hover:pr-0 transition-all" aria-hidden="true"> &rarr;</a>
+              </div>
               </div>
             </div>
           </div>
