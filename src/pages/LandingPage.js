@@ -9,7 +9,7 @@ export default class extends AbstractPage {
     async getHtml(){
         return `
         <div class="bg-[#121215]">
-        <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
+        <header id="header" class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
             <div class="flex items-center">
@@ -26,9 +26,9 @@ export default class extends AbstractPage {
               </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-              <button id="product-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Product</button>
               <button id="features-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Features</button>
-              <a href="#" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Company</a>
+              <button id="testimonials-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Testimonials</button>
+              <button id="newsletter-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Newsletter</button>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
               <div class="flex text-sm font-semibold leading-6 text-gray-100 transition-all group">
@@ -61,8 +61,8 @@ export default class extends AbstractPage {
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Product</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Features</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100">Product</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100">Features</a>
                   <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Marketplace</a>
                   <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Company</a>
                 </div>
@@ -188,7 +188,7 @@ export default class extends AbstractPage {
         </div>
       </div>
       
-      <section class="relative py-14">
+      <section id="testimonials-section" class="relative py-14">
         <div class="relative z-10 max-w-screen-xl mx-auto px-4 md:px-8">
             <div class="max-w-xl sm:text-center md:mx-auto">
                 <h3 class="text-gray-100 text-3xl font-semibold sm:text-4xl">
@@ -265,7 +265,7 @@ export default class extends AbstractPage {
         </div>
         <div class="absolute top-0 w-full h-[350px] testimonials"></div>
     </section>
-    <div class="relative overflow-hidden">
+    <div id="newsletter-section" class="relative overflow-hidden">
         <div class="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
@@ -364,16 +364,25 @@ export default class extends AbstractPage {
       });  
       
       const featuresLink = document.getElementById('features-link');
-      const productLink = document.getElementById('product-link');
+      const testimonialsLink = document.getElementById('testimonials-link');
+      const newsletterLink = document.getElementById('newsletter-link');
       
       const featuresSection = document.getElementById('features-section');
+      const testimonialsSection = document.getElementById('testimonials-section');
+      const newsletterSection = document.getElementById('newsletter-section');
       
       featuresLink.addEventListener('click', () => {
           featuresSection.scrollIntoView({ behavior: 'smooth'});
       });
       
-      productLink.addEventListener('click', () => {
-          featuresSection.scrollIntoView({ behavior: 'smooth'});
+      testimonialsLink.addEventListener('click', () => {
+          let top = testimonialsSection.offsetTop;
+          let headerHeight = document.getElementById('header').offsetHeight;
+          window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
+      });
+
+      newsletterLink.addEventListener('click', () => {
+        newsletterSection.scrollIntoView({ behavior: 'smooth'});
       });
     }
 }
