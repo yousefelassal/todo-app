@@ -11,7 +11,7 @@ export default class extends AbstractPage {
                 <main>
                     <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
                         <div class="max-w-lg mx-auto flex-1 flex-row-reverse gap-12 items-center justify-between md:max-w-none md:flex">
-                            <div id="animation404" class="flex-1 max-w-lg">
+                            <div id="animation404" class="flex-1 max-w-2xl">
                                 <img class="w-full" src="/src/images/404.gif" alt="404" />
                             </div>
                             <div class="text-center">
