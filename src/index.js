@@ -1,6 +1,7 @@
 import Landing from "./pages/LandingPage.js";
 import Signup from "./pages/SignupPage.js";
 import Login from "./pages/LoginPage.js";
+import About from "./pages/AboutPage.js";
 
 const navigateTo = (url) => {
     history.pushState(null, null, url);
@@ -12,6 +13,7 @@ const router = async () => {
         {path: "/", view: Landing},
         {path: "/signup", view: Signup},
         {path: "/login", view: Login},
+        {path: "/about", view: About}
     ];
 
     const potentialMatches = routes.map((route) => {
