@@ -57,9 +57,9 @@ export default class extends AbstractPage {
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-200/10">
                 <div class="space-y-2 py-6">
-                  <button class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Features</button>
-                  <button class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Testimonials</button>
-                  <button class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Newsletter</button>
+                  <button id="features-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Features</button>
+                  <button id="testimonials-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Testimonials</button>
+                  <button id="newsletter-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Newsletter</button>
                 </div>
                 <div class="py-6">
                   <a href="/about" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">About</a>
@@ -365,14 +365,23 @@ export default class extends AbstractPage {
       });  
       
       const featuresLink = document.getElementById('features-link');
+      const featuresLink2 = document.getElementById('features-link-2');
       const testimonialsLink = document.getElementById('testimonials-link');
+      const testimonialsLink2 = document.getElementById('testimonials-link-2');
       const newsletterLink = document.getElementById('newsletter-link');
+      const newsletterLink2 = document.getElementById('newsletter-link-2');
       
       const featuresSection = document.getElementById('features-section');
       const testimonialsSection = document.getElementById('testimonials-section');
       const newsletterSection = document.getElementById('newsletter-section');
       
       featuresLink.addEventListener('click', () => {
+          featuresSection.scrollIntoView({ behavior: 'smooth'});
+      });
+
+      featuresLink2.addEventListener('click', () => {
+          navbar.classList.remove('flex');
+          navbar.classList.add('hidden');
           featuresSection.scrollIntoView({ behavior: 'smooth'});
       });
       
@@ -382,8 +391,24 @@ export default class extends AbstractPage {
           window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
       });
 
+      testimonialsLink2.addEventListener('click', () => {
+          navbar.classList.remove('flex');
+          navbar.classList.add('hidden');
+          let top = testimonialsSection.offsetTop;
+          let headerHeight = document.getElementById('header').offsetHeight;
+          window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
+      });
+
       newsletterLink.addEventListener('click', () => {
         newsletterSection.scrollIntoView({ behavior: 'smooth'});
+      });
+
+      newsletterLink2.addEventListener('click', () => {
+        navbar.classList.remove('flex');
+        navbar.classList.add('hidden');
+        let top = newsletterSection.offsetTop;
+        let headerHeight = document.getElementById('header').offsetHeight - 30;
+        window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
       });
     }
 }
