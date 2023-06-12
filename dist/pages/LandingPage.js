@@ -9,7 +9,7 @@ export default class extends AbstractPage {
     async getHtml(){
         return `
         <div class="bg-[#121215]">
-        <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
+        <header id="header" class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
             <div class="flex items-center">
@@ -26,9 +26,9 @@ export default class extends AbstractPage {
               </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-              <button id="product-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Product</button>
               <button id="features-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Features</button>
-              <a href="#" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Company</a>
+              <button id="testimonials-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Testimonials</button>
+              <button id="newsletter-link" class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Newsletter</button>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
               <div class="flex text-sm font-semibold leading-6 text-gray-100 transition-all group">
@@ -43,15 +43,11 @@ export default class extends AbstractPage {
           </nav>
         </header>
         <!-- Mobile menu -->
-        <div id="navbar" class="hidden lg:hidden bg-white" role="dialog" aria-modal="true">
+        <div id="navbar" class="hidden lg:hidden" role="dialog" aria-modal="true">
           <div class="fixed inset-0 z-50"></div>
-          <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="/" class="-m-1.5 p-1.5">
-                <span class="sr-only">todo.</span>
-                <div class="px-2 cursor-default"><span class="text-5xl text-[var(--primary)]">to</span><span class="text-5xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do.</span></div>
-              </a>
-              <button id="close-nav" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <div id="nav-animation" class="fixed inset-y-0 right-0 z-50 bg-neutral-900 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-end">
+              <button id="close-nav" type="button" class="-m-2.5 mt-0 rounded-md p-2.5 text-gray-700">
                 <span class="sr-only">Close menu</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -59,15 +55,20 @@ export default class extends AbstractPage {
               </button>
             </div>
             <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="-my-6 divide-y divide-gray-200/10">
                 <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Product</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Features</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Marketplace</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Company</a>
+                  <button id="features-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Features</button>
+                  <button id="testimonials-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Testimonials</button>
+                  <button id="newsletter-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Newsletter</button>
                 </div>
                 <div class="py-6">
-                  <a href="/login" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-50">Log in</a>
+                  <a href="/faqs" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">FAQs</a>
+                  <a href="/team" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Team</a>
+                  <a href="/support" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Support</a>
+                </div>
+                <div class="py-6">
+                  <a href="/login" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">Log in</a>
+                  <a href="/signup" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">Sign up</a>
                 </div>
               </div>
             </div>
@@ -100,7 +101,7 @@ export default class extends AbstractPage {
             <div class="mt-6">
             <ul class="flex gap-y-6 flex-wrap items-center justify-center [&>*]:px-12 lg:divide-x lg:divide-neutral-700">
                 <li class="flex-none">
-                    <img id="room-finder" src="/images/room-finder.png" alt="room finder" class="w-28">
+                    <img id="room-finder" src="../images/room-finder.png" alt="room finder" class="w-28">
                 </li>
                 <li class="flex-none">
                     <svg class="w-28" viewBox="0 0 129 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -154,7 +155,7 @@ export default class extends AbstractPage {
             </div>
           </div>
           <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-            <img id="product-img" class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="/images/product-page.png" alt="product image">
+            <img id="product-img" class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="../images/product-page.png" alt="product image">
           </div>
           <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
             <div class="lg:pr-4">
@@ -188,7 +189,7 @@ export default class extends AbstractPage {
         </div>
       </div>
       
-      <section class="relative py-14">
+      <section id="testimonials-section" class="relative py-14">
         <div class="relative z-10 max-w-screen-xl mx-auto px-4 md:px-8">
             <div class="max-w-xl sm:text-center md:mx-auto">
                 <h3 class="text-gray-100 text-3xl font-semibold sm:text-4xl">
@@ -211,7 +212,7 @@ export default class extends AbstractPage {
                                     The app is very convenient, secure, and user friendly, the ui is very smooth and easy to navigate. also liked the push to deploy feature very ideal.</p>
                             </blockquote>
                             <div class="flex items-center gap-x-4 p-4 mt-6 bg-neutral-800 rounded-xl">
-                                <img id="seif" src="/images/seif.jpeg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
+                                <img id="seif" src="../images/seif.jpeg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
                                 <div>
                                     <span class="block text-gray-100 font-semibold">Seif Nomair</span>
                                     <span class="block text-[#683DF7]/80 text-sm mt-0.5">Bany adam</span>
@@ -232,7 +233,7 @@ export default class extends AbstractPage {
                               </p>
                           </blockquote>
                           <div class="flex items-center gap-x-4 p-4 mt-6 bg-neutral-800 rounded-xl">
-                              <img id="lenin" src="/images/Vladimir_Lenin.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
+                              <img id="lenin" src="../images/Vladimir_Lenin.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
                               <div>
                                   <span class="block text-gray-100 font-semibold">Vladimir Lenin</span>
                                   <span class="block text-[#683DF7]/80 text-sm mt-0.5">Communist leader</span>
@@ -252,7 +253,7 @@ export default class extends AbstractPage {
                                 It helps me navigate the chaos of life with ease. Its thoughtful features have become my trusted guide on the path to productivity.</p>
                         </blockquote>
                         <div class="flex items-center gap-x-4 p-4 mt-6 bg-neutral-800 rounded-xl">
-                            <img id="socrates" src="/images/socrates.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
+                            <img id="socrates" src="../images/socrates.jpg" class="w-16 h-16 rounded-full border-2 border-[#683DF7]/40" />
                             <div>
                                 <span class="block text-gray-100 font-semibold">Socrates</span>
                                 <span class="block text-[#683DF7]/80 text-sm mt-0.5">Greek philosopher</span>
@@ -265,7 +266,7 @@ export default class extends AbstractPage {
         </div>
         <div class="absolute top-0 w-full h-[350px] testimonials"></div>
     </section>
-    <div class="relative overflow-hidden">
+    <div id="newsletter-section" class="relative overflow-hidden">
         <div class="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
@@ -309,17 +310,17 @@ export default class extends AbstractPage {
             </div>
             <ul class="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
             <li class=" hover:text-gray-300">
-                <a href="#">
-                    About
+                <a href="/faqs" data-link>
+                    FAQs
                 </a>
             </li>
             <li class=" hover:text-gray-300">
-                <a href="#">
+                <a href="/team" data-link>
                     Team
                 </a>
             </li>
             <li class=" hover:text-gray-300">
-            <a href="#">
+            <a href="/support" data-link>
                 Support
             </a>
         </li>
@@ -364,16 +365,52 @@ export default class extends AbstractPage {
       });  
       
       const featuresLink = document.getElementById('features-link');
-      const productLink = document.getElementById('product-link');
+      const featuresLink2 = document.getElementById('features-link-2');
+      const testimonialsLink = document.getElementById('testimonials-link');
+      const testimonialsLink2 = document.getElementById('testimonials-link-2');
+      const newsletterLink = document.getElementById('newsletter-link');
+      const newsletterLink2 = document.getElementById('newsletter-link-2');
       
       const featuresSection = document.getElementById('features-section');
+      const testimonialsSection = document.getElementById('testimonials-section');
+      const newsletterSection = document.getElementById('newsletter-section');
       
       featuresLink.addEventListener('click', () => {
           featuresSection.scrollIntoView({ behavior: 'smooth'});
       });
+
+      featuresLink2.addEventListener('click', () => {
+          navbar.classList.remove('flex');
+          navbar.classList.add('hidden');
+          let top = featuresSection.offsetTop;
+          let headerHeight = document.getElementById('header').offsetHeight;
+          window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
+      });
       
-      productLink.addEventListener('click', () => {
-          featuresSection.scrollIntoView({ behavior: 'smooth'});
+      testimonialsLink.addEventListener('click', () => {
+          let top = testimonialsSection.offsetTop;
+          let headerHeight = document.getElementById('header').offsetHeight;
+          window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
+      });
+
+      testimonialsLink2.addEventListener('click', () => {
+          navbar.classList.remove('flex');
+          navbar.classList.add('hidden');
+          let top = testimonialsSection.offsetTop;
+          let headerHeight = document.getElementById('header').offsetHeight;
+          window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
+      });
+
+      newsletterLink.addEventListener('click', () => {
+        newsletterSection.scrollIntoView({ behavior: 'smooth'});
+      });
+
+      newsletterLink2.addEventListener('click', () => {
+        navbar.classList.remove('flex');
+        navbar.classList.add('hidden');
+        let top = newsletterSection.offsetTop;
+        let headerHeight = document.getElementById('header').offsetHeight - 30;
+        window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
       });
     }
 }
