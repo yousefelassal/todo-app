@@ -382,7 +382,9 @@ export default class extends AbstractPage {
       featuresLink2.addEventListener('click', () => {
           navbar.classList.remove('flex');
           navbar.classList.add('hidden');
-          featuresSection.scrollIntoView({ behavior: 'smooth'});
+          let top = featuresSection.offsetTop;
+          let headerHeight = document.getElementById('header').offsetHeight;
+          window.scrollTo({ top: top - headerHeight, behavior: 'smooth'});
       });
       
       testimonialsLink.addEventListener('click', () => {
