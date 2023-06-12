@@ -1,6 +1,7 @@
 import Landing from "./pages/LandingPage.js";
 import Signup from "./pages/SignupPage.js";
 import Login from "./pages/LoginPage.js";
+import Four0Four from "./pages/404.js";
 import About from "./pages/AboutPage.js";
 
 const navigateTo = (url) => {
@@ -27,7 +28,7 @@ const router = async () => {
 
     if (!match) {
         match = {
-            route: routes[0],
+            route: {view: Four0Four},
             isMatch: true,
         };
     };
