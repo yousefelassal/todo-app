@@ -62,7 +62,7 @@ export default class extends AbstractPage {
                   <button id="newsletter-link-2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Newsletter</button>
                 </div>
                 <div class="py-6">
-                  <a href="/about" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">About</a>
+                  <a href="/faqs" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">FAQs</a>
                   <a href="/team" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Team</a>
                   <a href="/support" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Support</a>
                 </div>
@@ -310,8 +310,8 @@ export default class extends AbstractPage {
             </div>
             <ul class="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
             <li class=" hover:text-gray-300">
-                <a href="/about" data-link>
-                    About
+                <a href="/faqs" data-link>
+                    FAQs
                 </a>
             </li>
             <li class=" hover:text-gray-300">

@@ -2,7 +2,7 @@ import Landing from "./pages/LandingPage.js";
 import Signup from "./pages/SignupPage.js";
 import Login from "./pages/LoginPage.js";
 import Four0Four from "./pages/404.js";
-import About from "./pages/AboutPage.js";
+import FAQs from "./pages/FAQsPage.js";
 import Support from "./pages/SupportPage.js";
 
 const navigateTo = (url) => {
@@ -15,7 +15,7 @@ const router = async () => {
         {path: "/", view: Landing},
         {path: "/signup", view: Signup},
         {path: "/login", view: Login},
-        {path: "/about", view: About},
+        {path: "/faqs", view: FAQs},
         {path: "/support", view: Support},
     ];
 
