@@ -7,21 +7,27 @@ from rest_framework import status
 from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 
 # Create your views here.
 
 class TasksApi(APIView):
+    @method_decorator(login_required)
     def get(self, request):
-        result = Task.objects.all()
+        result = Task.objects.filter(user=request.user)
         serializer = taskSerializer(result, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-
+    @method_decorator(login_required)
     def post(self, request):
         csrf_token = get_token(request)
-        serializer = taskSerializer(data=request.data)
+        user = request.user
+        data = request.data.copy()
+        data['user'] = user.id
+        serializer = taskSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -29,17 +35,23 @@ class TasksApi(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class TaskDetailsApi(APIView):
-   
-   def patch(self, request, id):
+
+    @method_decorator(login_required)
+    def patch(self, request, id):
+
+
         csrf_token = get_token(request)
 
         try:
-            obj = Task.objects.get(id=id)
+            user  = request.user
+            data = request.data.copy()
+            data['user'] = user.id
+            obj = Task.objects.get(id=id, user=user)
         except Task.DoesNotExist:
             msg = {'msg':'Task Not Found'}
             return Response(msg, status= status.HTTP_404_NOT_FOUND)
         
-        serializer = taskSerializer(obj, data=request.data, partial=True)
+        serializer = taskSerializer(obj, data=data, partial=True)
 
         if serializer.is_valid():
             serializer.save()

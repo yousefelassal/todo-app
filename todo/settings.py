@@ -33,20 +33,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
     'tasks',
     'rest_framework'
 ]
-
+STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'spa.middleware.SPAMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -57,11 +61,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "todo.urls"
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 TEMPLATES = [
 
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'dist'),],
+        "DIRS": [
+            os.path.join(BASE_DIR, 'dist'),
+            ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -120,6 +130,9 @@ STATIC_URL = "s/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dist',),
+    os.path.join(BASE_DIR),
+    os.path.join(BASE_DIR, 'src',),
+
 ]
 
 

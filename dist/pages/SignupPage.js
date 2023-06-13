@@ -1,5 +1,6 @@
 import AbstractPage from "./AbstractPage.js";
 
+
 export default class extends AbstractPage {
     constructor(){
         super();
@@ -45,7 +46,7 @@ export default class extends AbstractPage {
                     >.
               </p>
       
-              <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+              <form method='post' class="mt-8 grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
                     <label
                       for="firstName"
@@ -196,6 +197,7 @@ export default class extends AbstractPage {
                 <div class="col-span-6 w-full flex-1 flex place-items-center place-content-center">
                   <button
                     class="shrink-0 flex items-center justify-center w-full rounded-md h-10 bg-gradient-to-br from-[var(--primary-gradient)] to-[var(--secondary-gradient)] group-hover:bg-gradient-to-r text-[var(--primary)] shadow-md hover:bg-gradient-to-tr px-12 py-3 text-sm font-medium text-white transition"
+                    type="submit"
                   >
                     Create an account
                   </button>
@@ -265,5 +267,35 @@ email.addEventListener('input', () => {
         emailIcon.classList.remove('valid');
     }
 });
+
+
+
+
+let form = document.querySelector('form');
+const csrftoken = getCookie('csrftoken');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  axios.post('/createuser/', formData, {
+    headers: {
+      'X-CSRFToken': csrftoken
+    }
+  })
+  .then(response => {
+    console.log('Form submission successful');
+    window.location.href = '/login';
+    // Handle the response data here
+  })
+  .catch(error => {
+    console.error('Form submission failed', error.response.data.msg);
+    // Handle the error here
+  });
+});
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
     }
 }
