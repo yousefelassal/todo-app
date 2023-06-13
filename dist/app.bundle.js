@@ -112,7 +112,7 @@
               var i = document.cookie.match(/csrftoken=(.+)/)[1];
               o.ajax({
                 async: !1,
-                url: "http://localhost:3000/tasks/" + l + "/",
+                url: "/tasks-api-details/" + l + "/",
                 type: "PATCH",
                 headers: {
                   "X-Csrftoken": i,
@@ -260,7 +260,7 @@
         }
         o.ajax({
           async: "false",
-          url: "http://localhost:3000/tasks",
+          url: "/tasks-api/",
           type: "GET",
           success: function (e) {
             e.forEach((e) => {
