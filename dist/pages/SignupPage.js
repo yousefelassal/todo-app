@@ -287,7 +287,7 @@ form.addEventListener('submit', (event) => {
     // Handle the response data here
   })
   .catch(error => {
-    console.error('Form submission failed', error);
+    console.error('Form submission failed', error.response.data.msg);
     // Handle the error here
   });
 });
