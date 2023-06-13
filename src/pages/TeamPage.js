@@ -25,9 +25,9 @@ export default class extends AbstractPage {
               </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-              <a href="/faqs" data-link class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">FAQs</a>
+              <a href="/faqs" data-link class="text-sm font-semibold leading-6 text-gray-200 hover:text-gray-300">FAQs</a>
               <a href="/team" data-link class="text-sm underline underline-offset-8 font-semibold leading-6 text-white hover:text-gray-300">Team</a>
-              <a href="/support" data-link class="text-sm font-semibold leading-6 text-gray-100 hover:text-gray-300">Support</a>
+              <a href="/support" data-link class="text-sm font-semibold leading-6 text-gray-200 hover:text-gray-300">Support</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
               <div class="flex text-sm font-semibold leading-6 text-gray-100 transition-all group">

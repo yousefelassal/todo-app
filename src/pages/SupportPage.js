@@ -9,9 +9,64 @@ export default class extends AbstractPage {
     async getHtml() {
         return `
         <div class="h-screen bg-[#121215] relative isolate">
-        <div class="p-6 w-screen flex text-center items-start justify-end md:justify-start fixed lg:px-8">
-            <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
-            <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+        <header id="header" class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-sm">
+          <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+            <div class="flex items-center">
+              <a class="flex cursor-pointer text-4xl text-[var(--primary)]" href="/" data-link>to</a>
+              <a href="/" data-link class="text-4xl bg-clip-text text-transparent bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">do</a>
+            </div>
+            </div>
+            <div class="flex lg:hidden">
+              <button id="open-nav" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+              <a href="/faqs" data-link class="text-sm font-semibold leading-6 text-gray-200 hover:text-gray-300">FAQs</a>
+              <a href="/team" data-link class="text-sm font-semibold leading-6 text-gray-200 hover:text-gray-300">Team</a>
+              <a href="/support" data-link class="text-sm font-semibold leading-6 text-white hover:text-gray-300 underline underline-offset-8">Support</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+              <div class="flex text-sm font-semibold leading-6 text-gray-100 transition-all group">
+                  <a href="/login" data-link class="transition-all group-hover:mr-1">Log in &nbsp;</a>
+                  <a href="/login" data-link class="pr-1 group-hover:pr-0 transition-all" aria-hidden="true"> &rarr;</a>
+              </div>
+                <a id="signUpBtn" href="/signup" data-link class="ml-6 button button-primary">
+                    Sign up
+                    <div class="button-border"></div>
+                </a>
+            </div>
+          </nav>
+        </header>
+        <div id="navbar" class="hidden" role="dialog" aria-modal="true">
+          <div class="fixed inset-0 z-50"></div>
+          <div id="nav-animation" class="fixed inset-y-0 right-0 z-50 bg-neutral-900 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-end">
+              <button id="close-nav" type="button" class="-m-2.5 mt-0 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-200/10">
+                <div class="py-6">
+                  <a href="/faqs" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">FAQs</a>
+                  <a href="/team" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Team</a>
+                  <a href="/support" data-link class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:text-gray-300">Support</a>
+                </div>
+                <div class="py-6">
+                  <a href="/login" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">Log in</a>
+                  <a href="/signup" data-link class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr from-[var(--primary-gradient)] to-[var(--secondary-gradient)]">Sign up</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="absolute inset-0 -z-10 overflow-hidden">
           <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-neutral-800 [mask-image:radial-gradient(64rem_64rem_at_top,#121215,transparent)]" aria-hidden="true">
@@ -26,7 +81,7 @@ export default class extends AbstractPage {
             <rect width="100%" height="100%" stroke-width="0" fill="url(#1212152c-7d03-4cc4-a2bd-151760b470a0)" />
           </svg>
         </div>
-        <main class="py-14">
+        <main class="py-20">
         <div class="max-w-screen-xl mx-auto px-4 text-gray-400 md:px-8">
             <div class="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
                 <div class="max-w-lg space-y-3 justify-self-center lg:mt-12">
@@ -156,5 +211,19 @@ export default class extends AbstractPage {
                 emailIcon.classList.remove('valid');
             }
         });
+
+        const navbar = document.getElementById('navbar');
+      const openNav = document.getElementById('open-nav');
+      const closeNav = document.getElementById('close-nav');
+      
+      openNav.addEventListener('click', () => {
+          navbar.classList.remove('hidden');
+          navbar.classList.add('flex');
+      });
+      
+      closeNav.addEventListener('click', () => {
+          navbar.classList.remove('flex');
+          navbar.classList.add('hidden');
+      });  
     }
 }
