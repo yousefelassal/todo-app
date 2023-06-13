@@ -8,15 +8,15 @@ export default class extends AbstractPage {
 
     async getHtml() {
         return `
-        <div id="teamPage" class="bg-[#121215] w-screen py-24 sm:py-32 grid place-items-center overflow-hidden">
-  <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 ">
+        <div class="bg-[#121215] w-full py-24 sm:py-32 grid place-items-center">
+  <div class="grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 ">
     <div class="max-w-2xl ">
       <h2 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Our Team</h2>
       <p class="mt-6 text-lg leading-8 text-gray-400">Powering Progress Together: Get to Know Our Dedicated Team</p>
     </div>
-    <ul role="list" class=" grid place-items-center gap-x-8 gap-y-[4.5rem] sm:grid-cols-2 sm:gap-y-16 xl:col-span-2 ">
-    <li class="group relative">
-        <div class="flex relative rounded-lg bg-neutral-800 shadow-md p-8 justify-center flex-col items-center gap-6 ">
+    <ul role="list" class="grid place-items-center gap-x-8 gap-y-[4.5rem] sm:grid-cols-2 sm:gap-y-16 xl:col-span-2 ">
+    <li class="group relative ">
+        <div class="flex  relative rounded-lg bg-neutral-800 shadow-md p-8 justify-center flex-col items-center gap-6 ">
           <img id="mohannad" class="skeleton h-32 w-32 " src="" alt="">
           <div class="grid place-items-center ">
             <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-100">Mohannad Ashraf</h3>
@@ -37,8 +37,8 @@ export default class extends AbstractPage {
             </div>
             </a>
       </li>
-      <li class="group relative">
-      <div class="flex relative rounded-lg bg-neutral-800 shadow-md p-8 justify-center flex-col items-center gap-6 ">
+      <li class="group relative ">
+      <div class=" flex relative rounded-lg bg-neutral-800 shadow-md p-8 justify-center flex-col items-center gap-6 ">
       <img id="yousef" class="skeleton h-32 w-32 " src="" alt="">
           <div class="grid place-items-center ">
           <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-100">Yousef Sameh</h3>
