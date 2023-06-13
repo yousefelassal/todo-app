@@ -84,7 +84,7 @@ export default class extends AbstractPage {
         <main class="py-20">
         <div class="max-w-screen-xl mx-auto px-4 text-gray-400 md:px-8">
             <div class="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
-                <div class="max-w-lg space-y-3 justify-self-center lg:mt-12">
+                <div class="max-w-lg space-y-3 justify-self-center mt-2 lg:mt-12">
                     <h3 class="text-indigo-600 font-semibold">
                         Support
                     </h3>
