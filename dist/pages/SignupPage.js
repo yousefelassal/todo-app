@@ -20,7 +20,7 @@ export default class extends AbstractPage {
             <img
               alt="Pattern"
               id="pattern"
-              src="/images/pattern.svg"
+              src="../images/pattern.svg"
               class="absolute inset-0 h-full w-full object-cover"
             />
           </aside>

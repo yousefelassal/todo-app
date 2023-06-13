@@ -442,3 +442,32 @@ html.dark ::-webkit-scrollbar-thumb:active{
   @apply: stroke-red-600;
   stroke: #EF4444;
 }
+
+#nav-animation{
+  animation: slideDown 0.2s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skeleton{
+  animation: skeleton-loading 1s linear infinite alternate;
+  text-indent: -9999px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+      background-color: hsl(200, 10%, 15%);
+  }
+  100% {
+      background-color: hsl(200, 20%, 30%);
+  }
+  }
