@@ -61,6 +61,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "todo.urls"
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 TEMPLATES = [
 
     {

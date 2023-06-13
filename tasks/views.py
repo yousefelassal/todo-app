@@ -7,6 +7,8 @@ from rest_framework import status
 from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 
@@ -18,10 +20,13 @@ class TasksApi(APIView):
         serializer = taskSerializer(result, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-
+    @method_decorator(login_required)
     def post(self, request):
         csrf_token = get_token(request)
-        serializer = taskSerializer(data=request.data)
+        user = request.user
+        data = request.data.copy()
+        data['user'] = user.id
+        serializer = taskSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
