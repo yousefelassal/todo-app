@@ -564,6 +564,30 @@ video {
   bottom: 0px;
 }
 
+.-bottom-12 {
+  bottom: -3rem;
+}
+
+.-bottom-2 {
+  bottom: -0.5rem;
+}
+
+.-left-2 {
+  left: -0.5rem;
+}
+
+.-right-2 {
+  right: -0.5rem;
+}
+
+.-right-4 {
+  right: -1rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
 .-top-40 {
   top: -10rem;
 }
@@ -598,6 +622,10 @@ video {
 
 .left-8 {
   left: 2rem;
+}
+
+.left-\[90px\] {
+  left: 90px;
 }
 
 .left-\[calc\(50\%\+3rem\)\] {
@@ -636,6 +664,10 @@ video {
   top: 2.5rem;
 }
 
+.top-12 {
+  top: 3rem;
+}
+
 .top-4 {
   top: 1rem;
 }
@@ -648,64 +680,24 @@ video {
   top: calc(100% - 13rem);
 }
 
-.left-2 {
-  left: 0.5rem;
+.left-\[96px\] {
+  left: 96px;
 }
 
-.top-2 {
-  top: 0.5rem;
+.left-\[128px\] {
+  left: 128px;
 }
 
-.top-1 {
-  top: 0.25rem;
+.-bottom-4 {
+  bottom: -1rem;
 }
 
-.-left-4 {
-  left: -1rem;
+.-bottom-1 {
+  bottom: -0.25rem;
 }
 
-.-top-4 {
-  top: -1rem;
-}
-
-.-left-2 {
-  left: -0.5rem;
-}
-
-.-top-2 {
-  top: -0.5rem;
-}
-
-.bottom-2 {
-  bottom: 0.5rem;
-}
-
-.right-2 {
-  right: 0.5rem;
-}
-
-.-bottom-2 {
-  bottom: -0.5rem;
-}
-
-.-right-2 {
-  right: -0.5rem;
-}
-
-.-bottom-48 {
-  bottom: -12rem;
-}
-
-.-bottom-12 {
-  bottom: -3rem;
-}
-
-.left-24 {
-  left: 6rem;
-}
-
-.left-\[90px\] {
-  left: 90px;
+.-left-1 {
+  left: -0.25rem;
 }
 
 .isolate {
@@ -988,6 +980,14 @@ video {
   width: 100vw;
 }
 
+.w-52 {
+  width: 13rem;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -1190,10 +1190,6 @@ video {
   row-gap: 2.5rem;
 }
 
-.gap-y-12 {
-  row-gap: 3rem;
-}
-
 .gap-y-16 {
   row-gap: 4rem;
 }
@@ -1204,6 +1200,10 @@ video {
 
 .gap-y-6 {
   row-gap: 1.5rem;
+}
+
+.gap-y-\[4\.5rem\] {
+  row-gap: 4.5rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -1336,11 +1336,6 @@ video {
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-
-.border-gray-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(17 24 39 / var(--tw-border-opacity));
 }
 
 .bg-\[\#121215\] {
@@ -2410,37 +2405,6 @@ html.dark ::-webkit-scrollbar-thumb:active{
   }
 }
 
-.before\:absolute::before {
-  content: var(--tw-content);
-  position: absolute;
-}
-
-.before\:inset-0::before {
-  content: var(--tw-content);
-  inset: 0px;
-}
-
-.before\:rounded-lg::before {
-  content: var(--tw-content);
-  border-radius: 0.5rem;
-}
-
-.before\:border-2::before {
-  content: var(--tw-content);
-  border-width: 2px;
-}
-
-.before\:border-dashed::before {
-  content: var(--tw-content);
-  border-style: dashed;
-}
-
-.before\:border-gray-900::before {
-  content: var(--tw-content);
-  --tw-border-opacity: 1;
-  border-color: rgb(17 24 39 / var(--tw-border-opacity));
-}
-
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -2605,11 +2569,6 @@ html.dark ::-webkit-scrollbar-thumb:active{
   margin-right: 0.5rem;
 }
 
-.group:hover .group-hover\:-translate-y-2 {
-  --tw-translate-y: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .group:hover .group-hover\:gap-1 {
   gap: 0.25rem;
 }
@@ -2693,16 +2652,6 @@ html.dark ::-webkit-scrollbar-thumb:active{
 
 .peer:focus ~ .peer-focus\:text-\[var\(--secondary\)\] {
   color: var(--secondary);
-}
-
-:is([dir="ltr"] .group:hover .ltr\:group-hover\:-translate-x-2) {
-  --tw-translate-x: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-:is([dir="rtl"] .group:hover .rtl\:group-hover\:translate-x-2) {
-  --tw-translate-x: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 :is(.dark .dark\:border-gray-700) {
@@ -2855,10 +2804,6 @@ html.dark ::-webkit-scrollbar-thumb:active{
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
-  .sm\:p-6 {
-    padding: 1.5rem;
-  }
-
   .sm\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -2906,16 +2851,6 @@ html.dark ::-webkit-scrollbar-thumb:active{
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .sm\:leading-6 {
