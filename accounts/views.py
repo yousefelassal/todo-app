@@ -40,6 +40,7 @@ def loginUserView(request):
         
 @api_view(['POST'])
 def user_logout(request):
+    csrf_token = get_token(request)
     logout(request)
     return Response({'msg':'User Logged Out Successfully'}, status=200)
 
