@@ -4,6 +4,7 @@ import Login from "./pages/LoginPage.js";
 import Four0Four from "./pages/404.js";
 import FAQs from "./pages/FAQsPage.js";
 import Support from "./pages/SupportPage.js";
+import Team from "./pages/TeamPage.js";
 
 const navigateTo = (url) => {
     history.pushState(null, null, url);
@@ -17,6 +18,7 @@ const router = async () => {
         {path: "/login", view: Login},
         {path: "/faqs", view: FAQs},
         {path: "/support", view: Support},
+        {path: "/team", view: Team},
     ];
 
     const potentialMatches = routes.map((route) => {
