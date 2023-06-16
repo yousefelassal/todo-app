@@ -103,6 +103,7 @@
         function v() {
           document.querySelectorAll(".task-cbx").forEach((e) => {
             e.addEventListener("click", () => {
+              e.attributes['disabled'] = true;
               const t = e.getAttribute("data-cbx-index"),
                 r = document.querySelector(`[data-title-index="${t}"]`),
                 a = document.querySelector(`[data-options-index="${t}"]`),
@@ -121,6 +122,7 @@
                 data: JSON.stringify({ completed: !s.isCompleted }),
                 success: function (e) {
                   console.log(s.isCompleted), console.log("true");
+                  e.attributes['disabled'] = false;
                 },
               }),
                 e.checked
