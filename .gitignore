@@ -2,6 +2,3 @@
 node_modules/
 *.pyc
 Lib/
-Lib/site-packages/
-Scripts/
-Include/

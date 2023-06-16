@@ -25,10 +25,10 @@ urlpatterns = [
     path('', Homepage.as_view(), name='home'),
     path("login/",Homepage.as_view(), name='login'),
     path('login', Homepage.as_view(), name='login'),
-    path('user-Info/', userInfo.as_view(), name='user-info'),
     path('createuser/', createUserView, name='createuser'),
-    path('authuser/', loginUserView, name='authuser'),  
+    path('authuser/', loginUserView, name='authuser'),
     path('logout/',user_logout, name='logout'),
+    path('user-Info/', userInfo.as_view(), name='user-info'),
 
     
 
