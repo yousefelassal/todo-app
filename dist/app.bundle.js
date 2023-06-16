@@ -103,6 +103,7 @@
         function v() {
           document.querySelectorAll(".task-cbx").forEach((e) => {
             e.addEventListener("click", () => {
+              e.disabled = !0;
               const t = e.getAttribute("data-cbx-index"),
                 r = document.querySelector(`[data-title-index="${t}"]`),
                 a = document.querySelector(`[data-options-index="${t}"]`),
@@ -110,19 +111,16 @@
                 s = g[t],
                 l = n.getAttribute("data-task-id");
               var i = document.cookie.match(/csrftoken=(.+)/)[1];
-              o.ajax({
-                async: !1,
-                url: "/tasks-api-details/" + l + "/",
-                type: "PATCH",
-                headers: {
-                  "X-Csrftoken": i,
-                  "Content-Type": "application/json",
-                },
-                data: JSON.stringify({ completed: !s.isCompleted }),
-                success: function (e) {
-                  console.log(s.isCompleted), console.log("true");
-                },
-              }),
+              axios.patch('/tasks-api-details/' + l + '/',
+              { completed: !s.isCompleted }, {
+                headers: {"X-Csrftoken": i}
+              })
+              .then(function (response) {
+                e.disabled = !1;
+              })
+              .catch(function (error) {
+                e.disabled = !1;
+              })
                 e.checked
                   ? ((r.style.textDecoration = "line-through"),
                     (r.style.opacity = "0.7"),
