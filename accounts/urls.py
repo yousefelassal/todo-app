@@ -20,11 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path("signup/",Homepage.as_view(), name='signup'),
-    path('signup', Homepage.as_view(), name='signup_noslash'),
     path('', Homepage.as_view(), name='home'),
-    path("login/",Homepage.as_view(), name='login'),
-    path('login', Homepage.as_view(), name='login'),
     path('createuser/', createUserView, name='createuser'),
     path('authuser/', loginUserView, name='authuser'),
     path('logout/',user_logout, name='logout'),
