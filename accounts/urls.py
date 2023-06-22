@@ -18,9 +18,12 @@ from django.urls import path
 from .views import createUserView, Homepage, loginUserView, user_logout, userInfo
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    path("signup/",RedirectView.as_view(url='/signup'), name='signup'),
     path('', Homepage.as_view(), name='home'),
+    path("login/",RedirectView.as_view(url='/login'), name='login'),
     path('createuser/', createUserView, name='createuser'),
     path('authuser/', loginUserView, name='authuser'),
     path('logout/',user_logout, name='logout'),
