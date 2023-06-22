@@ -15,18 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import createUserView, Homepage, loginUserView, user_logout, userInfo
+from .views import createUserView, Homepage, loginUserView, user_logout, userInfo, user_redirect
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path("signup/",RedirectView.as_view(url='/signup'), name='signup'),
     path('', Homepage.as_view(), name='home'),
-    path("login/",RedirectView.as_view(url='/login'), name='login'),
+
+    path("signup",user_redirect, name='signup'),
+    path("signup/",RedirectView.as_view(url='/signup'), name='signup-redirect'),
+
+    path("login",user_redirect, name='login'),
+    path("login/",RedirectView.as_view(url='/login'), name='login-redirect'),
+
+    path('logout/',user_logout, name='logout'),
+
     path('createuser/', createUserView, name='createuser'),
     path('authuser/', loginUserView, name='authuser'),
-    path('logout/',user_logout, name='logout'),
     path('user-Info/', userInfo.as_view(), name='user-info'),
 
     

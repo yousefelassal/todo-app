@@ -67,6 +67,14 @@ class Homepage(TemplateView):
             return ['index.html']
         else:
             return ['app.html']
+
+def user_redirect(request):
+    if request.user.is_authenticated:
+        return redirect('/')
+    else:
+        return render(request, 'index.html')
+    
+
     
         
 
